@@ -1,0 +1,51 @@
+---
+// src/pages/legal.astro
+const title = "Aviso Legal y Privacidad | Bastión Defensa";
+---
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
+    <style>
+        :root { --navy: #0f1d3a; --text: #475569; --teal: #0d9488; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+        h1, h2 { color: var(--navy); }
+        .mono { font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; color: var(--teal); }
+        a { color: var(--teal); text-decoration: none; font-weight: bold; }
+        footer { margin-top: 4rem; border-top: 1px solid #eee; padding-top: 2rem; }
+    </style>
+</head>
+<body>
+    <a href="/">← Volver a Inicio</a>
+    <h1>Aviso Legal y Privacidad</h1>
+    <p class="mono">VERSIÓN_1.0_ABRIL_2026</p>
+
+    <section>
+        <h2>1. Información Identificativa</h2>
+        <p>En cumplimiento del artículo 10 de la Ley 34/2002, se exponen los datos del titular:</p>
+        <ul>
+            <li><strong>Responsable:</strong> Mario Muñoz Alfaro</li>
+            <li><strong>CIF/DNI:</strong> 48261177R</li>
+            <li><strong>Domicilio:</strong> Albacete, España.</li>
+            <li><strong>Contacto:</strong> info@bastiondefensa.com</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Protección de Datos (RGPD)</h2>
+        <p><strong>Finalidad:</strong> Solo usaremos tus datos para responder a las solicitudes de contacto y enviar diagnósticos de seguridad solicitados. No cedemos datos a terceros ni hacemos spam.</p>
+        <p><strong>Derechos:</strong> Puedes escribir a info@bastiondefensa.com para pedir que borremos tus datos o para saber qué información tenemos sobre ti.</p>
+    </section>
+
+    <section>
+        <h2>3. Propiedad Intelectual</h2>
+        <p>El código y contenido de esta web son propiedad de Bastión Defensa, diseñados para ofrecer transparencia técnica sin opacidad de fabricante.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Bastión Defensa. <a href="/legal" style="margin-left: 20px; color: inherit; text-decoration: underline;">Aviso Legal y Privacidad</a></p>
+    </footer>
+</body>
+</html>
