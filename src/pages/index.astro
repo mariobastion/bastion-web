@@ -1,17 +1,126 @@
 ---
-
+const title = "Bastión Defensa | Continuidad Operativa y SecOps";
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+		
+		<style>
+			:root {
+				--bg: #050505;
+				--card-bg: #0a0a0a;
+				--text-main: #e5e5e5;
+				--text-muted: #a1a1aa;
+				--accent: #10b981; /* Esmeralda SecOps */
+				--border: #1f1f23;
+			}
+			* { box-sizing: border-box; }
+			body {
+				background-color: var(--bg);
+				color: var(--text-main);
+				font-family: 'Inter', sans-serif;
+				margin: 0;
+				padding: 0;
+				line-height: 1.6;
+			}
+			.container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+			
+			/* Navegación / Header */
+			header { margin-bottom: 6rem; }
+			.brand { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: bold; font-size: 1.1rem; letter-spacing: -0.05em; }
+			h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.02em; margin: 1.5rem 0; line-height: 1.1; }
+			.hero-desc { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; }
+			.badge { background: #10b98115; color: var(--accent); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-family: 'JetBrains Mono'; border: 1px solid #10b98130; text-transform: uppercase; }
+
+			/* Secciones */
+			section { margin-bottom: 5rem; }
+			h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; }
+			
+			/* Tarjetas de Servicio */
+			.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+			.card { 
+				background: var(--card-bg); 
+				border: 1px solid var(--border); 
+				padding: 2rem; 
+				border-radius: 12px;
+				transition: all 0.3s ease;
+			}
+			.card:hover { border-color: #10b98150; transform: translateY(-4px); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+			.card strong { display: block; font-size: 1.1rem; margin-bottom: 0.75rem; color: #fff; }
+			.card p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+
+			/* Bio */
+			.bio { border-left: 2px solid var(--accent); padding-left: 2rem; margin-top: 3rem; }
+			.cta-container { margin-top: 4rem; text-align: center; border-top: 1px solid var(--border); padding-top: 4rem; }
+			
+			.btn { 
+				background: var(--accent); 
+				color: #000; 
+				padding: 1rem 2.5rem; 
+				text-decoration: none; 
+				font-weight: 700; 
+				border-radius: 8px;
+				display: inline-block;
+				transition: transform 0.2s ease;
+			}
+			.btn:hover { transform: scale(1.05); }
+
+			@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="container">
+			<header>
+				<div class="brand">BASTIÓN DEFENSA _</div>
+				<h1>Monitorizamos infraestructuras críticas para que tu negocio no se detenga.</h1>
+				<p class="hero-desc">Seguridad operativa y SecOps sin intermediarios. Arquitectura técnica avanzada y respuesta experta directa.</p>
+				<p style="color: #666; font-size: 0.9rem; margin-top: 2rem;">[ SIN COMERCIALES ] · [ SIN SOPORTE JUNIOR ]</p>
+			</header>
+
+			<section>
+				<h2>El Enfoque</h2>
+				<p style="font-size: 1.4rem; font-weight: 300; line-height: 1.4;">
+					Implementamos stacks de defensa basados en <strong>estándares abiertos</strong>. Garantizamos que tu seguridad no dependa de licencias opacas ni nubes cerradas. Propiedad de datos real.
+				</p>
+			</section>
+
+			<section>
+				<h2>Servicios Operativos</h2>
+				<div class="grid">
+					<div class="card">
+						<span class="badge">VRI</span>
+						<strong>Vigilancia y Respuesta Activa</strong>
+						<p>Detección de intrusiones y respuesta técnica ante amenazas críticas 24/7. Neutralizamos ataques en tiempo real.</p>
+					</div>
+					<div class="card">
+						<span class="badge">Hardening</span>
+						<strong>Higiene y Auditoría Continua</strong>
+						<p>Endurecimiento de sistemas y gestión de vulnerabilidades bajo estándares CIS Benchmarks.</p>
+					</div>
+					<div class="card" style="grid-column: span 1;">
+						<span class="badge">Resiliencia</span>
+						<strong>Diagnóstico de Continuidad</strong>
+						<p>Establecimiento de RTO y RPO veraces validados contra tu arquitectura técnica real.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="bio">
+				<h2>Trato de experto a experto</h2>
+				<p>Soy <strong>Mario</strong>. He diseñado Bastión Defensa para eliminar la burocracia de las grandes firmas y centrarme en la ejecución técnica. Yo configuro tu defensa y yo respondo ante tus incidentes. Sin filtros, sin retrasos.</p>
+			</section>
+
+			<div class="cta-container">
+				<a href="mailto:mario@bastiondefensa.com" class="btn">Solicitar Diagnóstico de Visibilidad</a>
+				<p style="margin-top: 1.5rem; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono';">SECURE_COMMUNICATION_ESTABLISHED</p>
+			</div>
+		</div>
 	</body>
 </html>
