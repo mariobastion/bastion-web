@@ -1,177 +1,540 @@
 ---
-const title = "Bastión Defensa | SecOps y Continuidad Operativa";
+const title = "Bastión Defensa | Continuidad Operativa y SecOps";
 ---
 
+<!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-		
-		<style>
-			:root {
-				--bg: #030303;
-				--surface: #0a0a0a;
-				--surface-border: #1f1f23;
-				--text-main: #f3f4f6;
-				--text-muted: #9ca3af;
-				--accent: #10b981;
-				--accent-glow: rgba(16, 185, 129, 0.15);
-			}
-			
-			* { box-sizing: border-box; margin: 0; padding: 0; }
-			body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-			
-			/* Layout General */
-			.container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
-			section { padding: 6rem 0; border-bottom: 1px solid var(--surface-border); }
-			section:last-child { border-bottom: none; }
-			
-			/* Navbar */
-			nav { padding: 1.5rem 2rem; border-bottom: 1px solid var(--surface-border); display: flex; justify-content: space-between; align-items: center; background: rgba(3,3,3,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100;}
-			.logo { font-family: 'JetBrains Mono', monospace; font-weight: bold; font-size: 1.2rem; color: #fff; letter-spacing: -0.05em; display: flex; align-items: center; gap: 0.5rem;}
-			.logo span { color: var(--accent); }
-			
-			/* Hero Section */
-			.hero { position: relative; padding: 8rem 0 6rem; overflow: hidden; }
-			.hero::before { content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); z-index: -1; }
-			.hero-badge { display: inline-block; font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--accent); border: 1px solid rgba(16,185,129,0.3); padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 2rem; background: rgba(16,185,129,0.05); }
-			h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; max-width: 800px;}
-			.hero-desc { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-bottom: 2.5rem; }
-			
-			/* Tech Band */
-			.tech-band { display: flex; gap: 2rem; flex-wrap: wrap; opacity: 0.6; font-family: 'JetBrains Mono'; font-size: 0.9rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--surface-border); }
-			
-			/* Typography elements */
-			.section-header { margin-bottom: 4rem; }
-			.section-tag { font-family: 'JetBrains Mono'; font-size: 0.85rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 1rem;}
-			h2 { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.02em; }
-			
-			/* Cards Grid */
-			.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-			.card { background: var(--surface); border: 1px solid var(--surface-border); padding: 2.5rem 2rem; border-radius: 12px; transition: all 0.3s ease; position: relative; overflow: hidden;}
-			.card:hover { border-color: rgba(16,185,129,0.4); transform: translateY(-5px); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5); }
-			.card-icon { width: 40px; height: 40px; color: var(--accent); margin-bottom: 1.5rem; }
-			.card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #fff; }
-			.card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
-			
-			/* Methodology Steps */
-			.step { display: flex; gap: 2rem; margin-bottom: 3rem; }
-			.step-number { font-family: 'JetBrains Mono'; font-size: 1.5rem; color: var(--accent); font-weight: bold; border: 1px solid var(--surface-border); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--surface); flex-shrink: 0;}
-			.step-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-			.step-content p { color: var(--text-muted); }
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bastión Defensa | Ciberseguridad Profesional en Albacete y España — SecOps y Continuidad Operativa</title>
+  <meta name="description" content="Bastión Defensa: servicios de ciberseguridad profesional en Albacete y toda España. Vigilancia 24/7, respuesta ante incidentes, auditoría continua y diagnóstico de resiliencia. Trato directo de experto."/>
+  <meta name="keywords" content="ciberseguridad Albacete, seguridad informática España, SOC Albacete, respuesta incidentes ciberseguridad, auditoría seguridad informática, continuidad operativa, SecOps, hardening sistemas, Wazuh, bastión defensa"/>
+  <meta name="author" content="Bastión Defensa"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.bastiondefensa.es/"/>
 
-			/* Bio Box */
-			.bio-box { background: linear-gradient(145deg, var(--surface) 0%, #050505 100%); border: 1px solid var(--surface-border); padding: 3rem; border-radius: 16px; border-left: 4px solid var(--accent); }
-			
-			/* Buttons */
-			.btn { background: var(--accent); color: #000; padding: 1rem 2rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
-			.btn:hover { background: #0ea5e9; background: #34d399; transform: scale(1.02); }
-			.btn-outline { background: transparent; color: #fff; border: 1px solid var(--surface-border); padding: 0.8rem 1.5rem; font-size: 0.9rem; border-radius: 6px; text-decoration: none; transition: 0.2s; }
-			.btn-outline:hover { border-color: var(--accent); }
-			
-			/* Footer */
-			footer { padding: 4rem 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--surface-border); }
+  <meta property="og:title" content="Bastión Defensa | Ciberseguridad Profesional en Albacete y España"/>
+  <meta property="og:description" content="Monitorizamos infraestructuras críticas y cerramos brechas de seguridad para que tu negocio no se detenga. Trato directo de experto."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.bastiondefensa.es/"/>
+  <meta property="og:locale" content="es_ES"/>
 
-			@media (max-width: 768px) { h1 { font-size: 2.5rem; } .step { flex-direction: column; gap: 1rem; } .bio-box { padding: 2rem; } }
-		</style>
-	</head>
-	<body>
-		<nav>
-			<div class="logo">BASTIÓN<span>_</span></div>
-			<a href="mailto:mario@bastiondefensa.com" class="btn-outline">Contacto Directo</a>
-		</nav>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Bastión Defensa",
+    "description": "Servicios de ciberseguridad profesional, SecOps y continuidad operativa en Albacete y toda España.",
+    "url": "https://www.bastiondefensa.es",
+    "telephone": "+34-000-000-000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Albacete",
+      "addressRegion": "Castilla-La Mancha",
+      "addressCountry": "ES"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Albacete"},
+      {"@type": "Country", "name": "España"}
+    ],
+    "serviceType": ["Ciberseguridad", "SecOps", "Auditoría de Seguridad", "Respuesta ante Incidentes", "Continuidad Operativa"],
+    "founder": {"@type": "Person", "name": "Mario"},
+    "sameAs": []
+  }
+  </script>
 
-		<main class="container">
-			<section class="hero">
-				<span class="hero-badge">OPERACIONES SECOPS DE ÉLITE</span>
-				<h1>Monitorizamos activos críticos para que tu negocio no se detenga.</h1>
-				<p class="hero-desc">En Bastión Defensa no hay comerciales ni niveles de soporte junior. Implementamos arquitectura técnica avanzada con trato de experto a experto.</p>
-				<a href="mailto:mario@bastiondefensa.com" class="btn">
-					Solicitar Diagnóstico
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-				</a>
-				
-				<div class="tech-band">
-					<span>[ WAZUH ]</span>
-					<span>[ THEHIVE ]</span>
-					<span>[ DOCKER ]</span>
-					<span>[ PROXMOX ]</span>
-					<span>[ CIS BENCHMARKS ]</span>
-				</div>
-			</section>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
-			<section>
-				<div class="section-header">
-					<span class="section-tag">Nuestra Solución</span>
-					<h2>Servicios Operativos</h2>
-				</div>
-				<div class="grid-3">
-					<div class="card">
-						<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-						<h3>Vigilancia y Respuesta (VRI)</h3>
-						<p>Monitorización 24/7 y detección de intrusiones. Respuesta técnica inmediata ante amenazas críticas como Ransomware o fuerza bruta.</p>
-					</div>
-					<div class="card">
-						<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-						<h3>Higiene y Auditoría</h3>
-						<p>Gestión proactiva de la superficie de ataque. Endurecimiento de sistemas (Hardening) y control de vulnerabilidades con evidencias reales.</p>
-					</div>
-					<div class="card">
-						<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-						<h3>Resiliencia Técnica</h3>
-						<p>Análisis de impacto (BIA) para establecer RTO y RPO veraces, validados contra tu arquitectura técnica de backups y recuperación.</p>
-					</div>
-				</div>
-			</section>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-			<section>
-				<div class="section-header">
-					<span class="section-tag">Metodología</span>
-					<h2>Filosofía de Defensa</h2>
-				</div>
-				<div class="step">
-					<div class="step-number">01</div>
-					<div class="step-content">
-						<h3>Auditoría Sin Cajas Negras</h3>
-						<p>Implementamos stacks de defensa basados en estándares abiertos. Esto garantiza que tu seguridad no dependa de licencias propietarias ni nubes cerradas.</p>
-					</div>
-				</div>
-				<div class="step">
-					<div class="step-number">02</div>
-					<div class="step-content">
-						<h3>Despliegue Soberano</h3>
-						<p>La propiedad de los registros y la inteligencia de defensa siempre te pertenecen. Construimos una protección auditable sobre tu infraestructura.</p>
-					</div>
-				</div>
-				<div class="step">
-					<div class="step-number">03</div>
-					<div class="step-content">
-						<h3>Ejecución Directa</h3>
-						<p>Sin intermediarios. Cuando se activa una alerta crítica, es un arquitecto de seguridad quien interviene en los sistemas, no un script de Nivel 1.</p>
-					</div>
-				</div>
-			</section>
+    :root {
+      --navy: #0f1d3a;
+      --navy-mid: #162347;
+      --navy-light: #1c2d58;
+      --slate: #2a3a5c;
+      --sky: #e8eef6;
+      --sky-warm: #f4f6fa;
+      --white: #ffffff;
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --teal-bg: rgba(13,148,136,.08);
+      --teal-border: rgba(13,148,136,.2);
+      --amber: #f59e0b;
+      --amber-bg: rgba(245,158,11,.1);
+      --text-dark: #1a2740;
+      --text: #475569;
+      --text-light: #94a3b8;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(15,29,58,.06);
+      --shadow-md: 0 4px 20px rgba(15,29,58,.08);
+      --shadow-lg: 0 8px 40px rgba(15,29,58,.12);
+      --font: 'Plus Jakarta Sans', sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+      --radius: 14px;
+    }
 
-			<section>
-				<div class="bio-box">
-					<span class="section-tag">Responsabilidad Técnica</span>
-					<h2 style="margin-bottom: 1rem;">Soy Mario.</h2>
-					<p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px;">
-						He diseñado Bastión Defensa para eliminar la burocracia de las grandes consultoras y centrarme exclusivamente en la ejecución. Yo configuro tu arquitectura de vigilancia y yo respondo ante tus incidentes. <strong>Trato de experto a experto, sin filtros.</strong>
-					</p>
-					<br>
-					<a href="mailto:mario@bastiondefensa.com" class="btn">Hablar con Mario</a>
-				</div>
-			</section>
-		</main>
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: var(--teal); text-decoration: none; }
 
-		<footer>
-			<p>&copy; 2026 Bastión Defensa | Operaciones de Seguridad e Ingeniería.</p>
-		</footer>
-	</body>
+    /* NAV */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1140px; margin:0 auto;
+      display: flex; align-items:center; justify-content:space-between;
+      height: 68px;
+    }
+    .logo {
+      display: flex; align-items:center; gap:.6rem;
+      font-weight: 800; font-size: 1.15rem; color: var(--navy);
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+      border-radius: 9px;
+      display: flex; align-items:center; justify-content:center;
+    }
+    .logo-icon svg { width:20px; height:20px; }
+    .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+    .nav-links a { color: var(--text); font-size:.9rem; font-weight:500; transition: color .2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      padding: .55rem 1.3rem !important;
+      border-radius: 9px;
+      font-size: .85rem !important;
+      font-weight: 600 !important;
+      transition: all .25s;
+    }
+    .nav-cta:hover { background: var(--navy-mid) !important; transform:translateY(-1px); box-shadow: var(--shadow-md); }
+
+    .hamburger { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .hamburger svg { stroke: var(--navy); }
+
+    /* HERO */
+    .hero {
+      padding: 10rem 2rem 6rem;
+      background: linear-gradient(170deg, var(--sky-warm) 0%, var(--white) 55%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; top:-120px; right:-80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(13,148,136,.07) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .hero-inner {
+      max-width: 1140px; margin:0 auto;
+      display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items:center; gap:.5rem;
+      background: var(--teal-bg); border: 1px solid var(--teal-border);
+      color: var(--teal); font-size: .78rem; font-weight: 600;
+      padding: .4rem 1rem; border-radius: 100px; margin-bottom: 1.5rem;
+      animation: fadeUp .7s ease both;
+    }
+    .hero-badge svg { width:14px; height:14px; }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800;
+      color: var(--text-dark); line-height: 1.15; margin-bottom: 1.3rem;
+      animation: fadeUp .7s ease .1s both;
+    }
+    h1 span { color: var(--teal); }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--text); max-width: 500px;
+      margin-bottom: 1rem; animation: fadeUp .7s ease .2s both;
+    }
+    .hero-note {
+      font-family: var(--mono); font-size: .82rem; color: var(--text-light);
+      border-left: 3px solid var(--teal); padding-left: 1rem;
+      margin-bottom: 2rem; animation: fadeUp .7s ease .3s both;
+    }
+    .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; animation: fadeUp .7s ease .4s both; }
+
+    .trust-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow-lg);
+      padding: 2rem; animation: fadeUp .7s ease .3s both;
+    }
+    .trust-card h3 {
+      font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--text-light); margin-bottom: 1.5rem;
+    }
+    .trust-item {
+      display: flex; align-items:flex-start; gap: 1rem;
+      padding: .9rem 0; border-bottom: 1px solid var(--border);
+    }
+    .trust-item:last-child { border-bottom: none; }
+    .trust-icon {
+      width: 38px; height: 38px; flex-shrink:0;
+      background: var(--teal-bg); border-radius: 9px;
+      display: flex; align-items:center; justify-content:center;
+      color: var(--teal); font-size: .95rem;
+    }
+    .trust-item strong { display:block; color: var(--text-dark); font-size:.9rem; font-weight:600; }
+    .trust-item span { font-size:.82rem; color:var(--text-light); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items:center; gap:.5rem;
+      font-family: var(--font); font-weight: 700; font-size: .9rem;
+      padding: .85rem 1.8rem; border-radius: 10px;
+      transition: all .25s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--teal); color: var(--white);
+      box-shadow: 0 2px 12px rgba(13,148,136,.25);
+    }
+    .btn-primary:hover {
+      background: var(--teal-light); transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(13,148,136,.3);
+    }
+    .btn-outline {
+      background: transparent; color: var(--navy);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--teal-border); background: var(--teal-bg); color: var(--teal);
+    }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .section-label {
+      font-size: .75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: var(--teal); margin-bottom: .6rem;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem); font-weight: 800;
+      color: var(--text-dark); line-height: 1.2; margin-bottom: .75rem;
+    }
+    .section-desc { color: var(--text); max-width: 560px; font-size: 1rem; margin-bottom: 3rem; }
+
+    /* MANIFIESTO */
+    .manifiesto { background: var(--sky-warm); }
+    .mani-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .mani-text p { margin-bottom: 1rem; font-size:1.02rem; }
+    .stack-row { display: flex; flex-wrap:wrap; gap:.5rem; margin-top:1.5rem; }
+    .stack-chip {
+      font-family: var(--mono); font-size: .75rem; font-weight: 500;
+      padding: .35rem .85rem; background: var(--white);
+      border: 1px solid var(--border); border-radius: 7px; color: var(--text-dark);
+    }
+
+    .terminal {
+      background: var(--navy); border-radius: var(--radius); padding: 1.8rem;
+      font-family: var(--mono); font-size: .8rem; line-height: 2;
+      color: rgba(255,255,255,.5); box-shadow: var(--shadow-lg);
+      position: relative; overflow: hidden;
+    }
+    .terminal::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:40px;
+      background: rgba(255,255,255,.04); border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .term-dots { position:relative; z-index:1; display:flex; gap:6px; margin-bottom:1.2rem; }
+    .term-dots i { width:10px; height:10px; border-radius:50%; display:block; }
+    .term-dots i:nth-child(1){ background:#ff5f57; }
+    .term-dots i:nth-child(2){ background:#febc2e; }
+    .term-dots i:nth-child(3){ background:#28c840; }
+    .tg { color: var(--teal-light); }
+    .tw { color: rgba(255,255,255,.85); }
+
+    /* SERVICIOS */
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .svc-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2.2rem 1.8rem;
+      transition: all .3s; position: relative;
+    }
+    .svc-card:hover { border-color: var(--teal-border); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .svc-num { font-family: var(--mono); font-size: .7rem; color: var(--text-light); margin-bottom: 1rem; }
+    .svc-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items:center; justify-content:center; margin-bottom: 1.3rem;
+    }
+    .svc-icon.shield { background: linear-gradient(135deg, rgba(13,148,136,.12), rgba(13,148,136,.04)); color: var(--teal); }
+    .svc-icon.lock { background: linear-gradient(135deg, rgba(15,29,58,.1), rgba(15,29,58,.03)); color: var(--navy); }
+    .svc-icon.chart { background: var(--amber-bg); color: var(--amber); }
+    .svc-card h3 { font-size: 1.08rem; font-weight: 700; color: var(--text-dark); margin-bottom: .7rem; }
+    .svc-card p { font-size: .88rem; color: var(--text); line-height: 1.65; }
+    .svc-tag {
+      display: inline-block; font-family: var(--mono); font-size: .68rem; font-weight: 500;
+      color: var(--teal); background: var(--teal-bg);
+      padding: .2rem .65rem; border-radius: 5px; margin-top: 1.1rem;
+    }
+
+    /* MARIO */
+    .mario-section { background: var(--navy); color: rgba(255,255,255,.7); }
+    .mario-grid { display: grid; grid-template-columns: auto 1fr; gap: 3.5rem; align-items: center; }
+    .mario-avatar {
+      width: 150px; height: 150px;
+      background: linear-gradient(135deg, rgba(13,148,136,.25), rgba(13,148,136,.05));
+      border: 2px solid rgba(13,148,136,.3); border-radius: 50%;
+      display: flex; align-items:center; justify-content:center;
+      font-size: 3.2rem; font-weight: 800; color: var(--teal-light);
+    }
+    .mario-section .section-label { color: var(--teal-light); }
+    .mario-section h2 { color: var(--white); }
+    .mario-role { font-family: var(--mono); font-size: .82rem; color: var(--teal-light); margin-bottom: 1.2rem; }
+    .mario-section p { margin-bottom: .8rem; }
+    .pills { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap:wrap; }
+    .pill { display: flex; align-items:center; gap:.45rem; font-size: .82rem; color: rgba(255,255,255,.5); }
+    .pill-dot { width: 7px; height: 7px; background: var(--teal-light); border-radius: 50%; }
+
+    /* CTA */
+    .cta-section { background: var(--sky-warm); text-align:center; }
+    .cta-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4rem 2rem; max-width: 680px;
+      margin: 0 auto; box-shadow: var(--shadow-md);
+    }
+    .cta-box h2 { margin-bottom: .6rem; }
+    .cta-box > p { color: var(--text); margin-bottom: 2rem; }
+    .cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+    .local-section { text-align: center; padding: 4rem 2rem; }
+    .local-section p { color: var(--text-light); font-size: .92rem; max-width: 600px; margin: 0 auto; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 2.5rem 2rem;
+      display: flex; justify-content:space-between; align-items:center;
+      max-width: 1140px; margin: 0 auto; flex-wrap: wrap; gap: 1rem;
+    }
+    footer p { font-size:.8rem; color:var(--text-light); }
+    .footer-logo { font-weight:800; color:var(--navy); font-size:.95rem; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(22px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns:1fr; }
+      .trust-card { max-width: 420px; }
+      .svc-grid { grid-template-columns:1fr; max-width:480px; }
+      .mani-grid { grid-template-columns:1fr; }
+      .mario-grid { grid-template-columns:1fr; text-align:center; justify-items:center; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display:none; }
+      .hamburger { display:block; }
+      .nav-links.open {
+        display:flex; flex-direction:column;
+        position:absolute; top:68px; left:0; right:0;
+        background: rgba(255,255,255,.97); backdrop-filter: blur(20px);
+        padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); gap: 1rem;
+      }
+      section { padding: 4rem 1.2rem; }
+      .hero { padding: 8rem 1.2rem 4rem; }
+      .cta-box { padding: 2.5rem 1.5rem; }
+      footer { flex-direction:column; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      Bastión Defensa
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#manifiesto">Manifiesto</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#mario">Quién soy</a></li>
+      <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Ciberseguridad en Albacete y toda España
+      </div>
+      <h1>Tu negocio protegido con <span>arquitectura técnica real</span></h1>
+      <p class="hero-sub">Monitorizamos infraestructuras críticas y cerramos brechas de seguridad para que tu empresa no se detenga.</p>
+      <p class="hero-note">Sin comerciales ni niveles de soporte. Solo ejecución técnica y respuesta experta directa.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn btn-primary">
+          Solicitar diagnóstico gratuito
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+      </div>
+    </div>
+    <div class="trust-card">
+      <h3>Por qué confiar en nosotros</h3>
+      <div class="trust-item">
+        <div class="trust-icon">🔍</div>
+        <div><strong>Transparencia total</strong><span>Stack abierto y auditable. Sin cajas negras.</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <div><strong>Respuesta directa 24/7</strong><span>Mario responde personalmente. Sin filtros.</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🏢</div>
+        <div><strong>Especialistas en PYME</strong><span>Soluciones adaptadas a tu tamaño real.</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📋</div>
+        <div><strong>Tus datos son tuyos</strong><span>Propiedad total de registros e inteligencia.</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="manifiesto" id="manifiesto">
+  <div class="container">
+    <div class="mani-grid">
+      <div class="mani-text fade-in">
+        <p class="section-label">Nuestro manifiesto</p>
+        <h2>Seguridad transparente. Sin opacidad de fabricante.</h2>
+        <p>Implementamos stacks de defensa basados en <strong>estándares abiertos</strong>. Tu seguridad no depende de licencias propietarias ni de nubes cerradas.</p>
+        <p>El resultado: una protección auditable donde la propiedad de los registros y la inteligencia de defensa siempre te pertenecen.</p>
+        <div class="stack-row">
+          <span class="stack-chip">Wazuh</span>
+          <span class="stack-chip">TheHive</span>
+          <span class="stack-chip">Docker</span>
+          <span class="stack-chip">CIS Benchmarks</span>
+          <span class="stack-chip">Open Source</span>
+        </div>
+      </div>
+      <div class="terminal fade-in">
+        <div class="term-dots"><i></i><i></i><i></i></div>
+        <div style="position:relative;z-index:1;">
+          <span style="opacity:.4">// estado de tu infraestructura</span><br/>
+          <span class="tg">→</span> <span class="tw">wazuh-agent</span> &nbsp;&nbsp;&nbsp;<span style="color:#34d399">● activo</span><br/>
+          <span class="tg">→</span> <span class="tw">thehive-core</span> &nbsp;&nbsp;<span style="color:#34d399">● activo</span><br/>
+          <span class="tg">→</span> <span class="tw">firewall-rules</span> &nbsp;<span style="color:#34d399">● sincronizado</span><br/>
+          <span class="tg">→</span> <span class="tw">vuln-scan</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">● ejecutando…</span><br/>
+          <span class="tg">→</span> <span class="tw">logs-ownership</span> &nbsp;<span style="color:#34d399">● cliente</span><br/>
+          <br/>
+          <span style="opacity:.4">// sin cajas negras. sin dependencia.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <p class="section-label fade-in">Servicios</p>
+    <h2 class="fade-in">Tres líneas de defensa para tu negocio</h2>
+    <p class="section-desc fade-in">Proteger, endurecer y recuperar. Enfoque en resultados técnicos reales, no en promesas comerciales.</p>
+    <div class="svc-grid">
+      <article class="svc-card fade-in">
+        <p class="svc-num">01</p>
+        <div class="svc-icon shield">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Vigilancia y Respuesta Activa</h3>
+        <p>Detección de intrusiones y respuesta técnica ante amenazas críticas como Ransomware y Fuerza Bruta. Actuamos sobre tu infraestructura para neutralizar ataques antes de que afecten al negocio.</p>
+        <span class="svc-tag">24/7 · VRI</span>
+      </article>
+      <article class="svc-card fade-in">
+        <p class="svc-num">02</p>
+        <div class="svc-icon lock">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3>Higiene y Auditoría Continua</h3>
+        <p>Gestión proactiva de la superficie de ataque. Endurecimiento de sistemas (Hardening) y control de vulnerabilidades bajo estándares CIS Benchmarks. Evidencias reales, no suposiciones.</p>
+        <span class="svc-tag">CIS · Hardening</span>
+      </article>
+      <article class="svc-card fade-in">
+        <p class="svc-num">03</p>
+        <div class="svc-icon chart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Diagnóstico de Resiliencia</h3>
+        <p>Análisis de impacto (BIA) para establecer objetivos de recuperación (RTO y RPO) veraces, validados contra tu arquitectura técnica actual. Sabrás exactamente cuánto tardas en recuperarte.</p>
+        <span class="svc-tag">BIA · RTO · RPO</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="mario-section" id="mario">
+  <div class="container">
+    <div class="mario-grid fade-in">
+      <div class="mario-avatar">M</div>
+      <div class="mario-text">
+        <p class="section-label">Punto único de contacto</p>
+        <h2>Trato de experto a experto.</h2>
+        <p class="mario-role">Mario — Fundador & Arquitecto de Seguridad</p>
+        <p>He diseñado Bastión Defensa para eliminar la burocracia de las grandes firmas y centrarme en lo que importa: la ejecución técnica.</p>
+        <p>Yo configuro tu defensa y yo respondo ante tus incidentes. Sin filtros, sin retrasos y con total transparencia.</p>
+        <div class="pills">
+          <div class="pill"><div class="pill-dot"></div>Sin comerciales</div>
+          <div class="pill"><div class="pill-dot"></div>Sin niveles de soporte</div>
+          <div class="pill"><div class="pill-dot"></div>Respuesta directa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contacto">
+  <div class="container">
+    <div class="cta-box fade-in">
+      <p class="section-label">Contacto</p>
+      <h2>¿Listo para proteger tu negocio?</h2>
+      <p>Solicita un diagnóstico inicial sin compromiso. Hablamos de técnica, no de licencias.</p>
+      <div class="cta-btns">
+        <a href="mailto:info@bastiondefensa.es" class="btn btn-primary">info@bastiondefensa.es</a>
+        <a href="tel:+34000000000" class="btn btn-outline">Llamar ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="local-section">
+  <div class="container fade-in">
+    <p><strong style="color:var(--text-dark)">Bastión Defensa</strong> · Servicios de ciberseguridad profesional en Albacete, Castilla-La Mancha y toda España. Protección de infraestructuras, auditoría de seguridad y continuidad operativa para empresas y PYMES.</p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Bastión Defensa</span>
+  <p>© 2026 Bastión Defensa. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
 </html>
