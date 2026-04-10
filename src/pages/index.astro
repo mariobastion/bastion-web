@@ -12,12 +12,12 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
   <meta name="keywords" content="ciberseguridad Albacete, seguridad informática España, SOC Albacete, respuesta incidentes ciberseguridad, auditoría seguridad informática, continuidad operativa, SecOps, hardening sistemas, Wazuh, bastión defensa"/>
   <meta name="author" content="Bastión Defensa"/>
   <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://www.bastiondefensa.es/"/>
+  <link rel="canonical" href="https://www.bastiondefensa.com/"/>
 
   <meta property="og:title" content="Bastión Defensa | Ciberseguridad Profesional en Albacete y España"/>
   <meta property="og:description" content="Monitorizamos infraestructuras críticas y cerramos brechas de seguridad para que tu negocio no se detenga. Trato directo de experto."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://www.bastiondefensa.es/"/>
+  <meta property="og:url" content="https://www.bastiondefensa.com/"/>
   <meta property="og:locale" content="es_ES"/>
 
   <script type="application/ld+json">
@@ -26,7 +26,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
     "@type": "ProfessionalService",
     "name": "Bastión Defensa",
     "description": "Servicios de ciberseguridad profesional, SecOps y continuidad operativa en Albacete y toda España.",
-    "url": "https://www.bastiondefensa.es",
+    "url": "https://www.bastiondefensa.com",
     "telephone": "+34-000-000-000",
     "address": {
       "@type": "PostalAddress",
@@ -216,7 +216,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
     }
 
     /* SECTIONS */
-    section { padding: 6rem 2rem; }
+    section { padding: 6rem 2rem;  scroll-margin-top: 30px; }
     .container { max-width: 1140px; margin: 0 auto; }
     .section-label {
       font-size: .75rem; font-weight: 700; text-transform: uppercase;
@@ -510,7 +510,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       <h2>¿Listo para proteger tu negocio?</h2>
       <p>Solicita un diagnóstico inicial sin compromiso. Hablamos de técnica, no de licencias.</p>
       <div class="cta-btns">
-        <a href="mailto:info@bastiondefensa.es" class="btn btn-primary">info@bastiondefensa.es</a>
+        <a href="mailto:info@bastiondefensa.com" class="btn btn-primary">info@bastiondefensa.com</a>
         <a href="tel:+34000000000" class="btn btn-outline">Llamar ahora</a>
       </div>
     </div>
@@ -529,12 +529,23 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
 </footer>
 
 <script>
+// TU CÓDIGO ORIGINAL INTACTO:
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// EL NUEVO CÓDIGO AÑADIDO:
+const navLinks = document.getElementById('navLinks');
+const links = navLinks.querySelectorAll('a');
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
 </script>
 </body>
 </html>
