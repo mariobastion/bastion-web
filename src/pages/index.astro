@@ -379,9 +379,9 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Ciberseguridad en Albacete y toda España
       </div>
-      <h1>Tu negocio protegido con <span>arquitectura técnica real</span></h1>
-      <p class="hero-sub">Monitorizamos infraestructuras críticas y cerramos brechas de seguridad para que tu empresa no se detenga.</p>
-      <p class="hero-note">Sin comerciales ni niveles de soporte. Solo ejecución técnica y respuesta experta directa.</p>
+      <h1>Si hoy sufres un ciberataque, <span>¿podrá tu negocio abrir mañana?</span></h1>
+      <p class="hero-sub">Porque un antivirus ya no es suficiente. Blindamos tu infraestructura para que tu empresa nunca deje de facturar.</p>
+      <p class="hero-note">Sin comerciales ni niveles de soporte. <b>Habla directamente con el ingeniero</b> que diseña y ejecuta tu defensa.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn btn-primary">
           Solicitar diagnóstico gratuito
@@ -391,22 +391,22 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       </div>
     </div>
     <div class="trust-card">
-      <h3>Por qué confiar en nosotros</h3>
+      <h3>Por qué confiar en Bastión</h3>
       <div class="trust-item">
         <div class="trust-icon">🔍</div>
-        <div><strong>Transparencia total</strong><span>Stack abierto y auditable. Sin cajas negras.</span></div>
+        <div><strong>Transparencia total</strong><span>Sin letra pequeña ni costes ocultos.</span></div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">⚡</div>
-        <div><strong>Respuesta directa 24/7</strong><span>Mario responde personalmente. Sin filtros.</span></div>
+        <div><strong>Vigilancia 24/7</strong><span>Detección continua de amenazas, incluso de madrugada.</span></div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">🏢</div>
-        <div><strong>Especialistas en PYME</strong><span>Soluciones adaptadas a tu tamaño real.</span></div>
+        <div><strong>Enfoque PYME</strong><span>Soluciones prácticas adaptadas a tu tamaño real.</span></div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">📋</div>
-        <div><strong>Tus datos son tuyos</strong><span>Propiedad total de registros e inteligencia.</span></div>
+        <div><strong>Soberanía de datos</strong><span>Tu información es tuya y siempre lo será. Sin ataduras.</span></div>
       </div>
     </div>
   </div>
@@ -418,14 +418,14 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       <div class="mani-text fade-in">
         <p class="section-label">Nuestro manifiesto</p>
         <h2>Seguridad transparente. Sin opacidad de fabricante.</h2>
-        <p>Implementamos stacks de defensa basados en <strong>estándares abiertos</strong>. Tu seguridad no depende de licencias propietarias ni de nubes cerradas.</p>
+        <p>Implementamos sistemas de defensa basados en <strong>estándares abiertos</strong>. Tu seguridad no depende de pagar licencias abusivas ni de quedar atrapado en nubes cerradas.</p>
         <p>El resultado: una protección auditable donde la propiedad de los registros y la inteligencia de defensa siempre te pertenecen.</p>
         <div class="stack-row">
           <span class="stack-chip">Wazuh</span>
           <span class="stack-chip">TheHive</span>
-          <span class="stack-chip">Docker</span>
+          <span class="stack-chip">MITRE ATT&CK</span>
           <span class="stack-chip">CIS Benchmarks</span>
-          <span class="stack-chip">Open Source</span>
+          <span class="stack-chip">ENS</span>
         </div>
       </div>
       <div class="terminal fade-in">
@@ -436,7 +436,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
           <span class="tg">→</span> <span class="tw">thehive-core</span> &nbsp;&nbsp;<span style="color:#34d399">● activo</span><br/>
           <span class="tg">→</span> <span class="tw">firewall-rules</span> &nbsp;<span style="color:#34d399">● sincronizado</span><br/>
           <span class="tg">→</span> <span class="tw">vuln-scan</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">● ejecutando…</span><br/>
-          <span class="tg">→</span> <span class="tw">logs-ownership</span> &nbsp;<span style="color:#34d399">● cliente</span><br/>
+          <span class="tg">→</span> <span class="tw">data-ownership</span> &nbsp;<span style="color:#34d399">● cliente</span><br/>
           <br/>
           <span style="opacity:.4">// sin cajas negras. sin dependencia.</span>
         </div>
@@ -448,7 +448,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
 <section id="servicios">
   <div class="container">
     <p class="section-label fade-in">Servicios</p>
-    <h2 class="fade-in">Tres líneas de defensa para tu negocio</h2>
+    <h2 class="fade-in">Plan Integral de Continuidad Operativa</h2>
     <p class="section-desc fade-in">Proteger, endurecer y recuperar. Enfoque en resultados técnicos reales, no en promesas comerciales.</p>
     <div class="svc-grid">
       <article class="svc-card fade-in">
@@ -538,15 +538,18 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// EL NUEVO CÓDIGO AÑADIDO:
+// EL NUEVO CÓDIGO AÑADIDO (Ahora con control de errores):
 const navLinks = document.getElementById('navLinks');
-const links = navLinks.querySelectorAll('a');
 
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
+if (navLinks) {
+  const links = navLinks.querySelectorAll('a');
+  
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
   });
-});
+}
 </script>
 </body>
 </html>
