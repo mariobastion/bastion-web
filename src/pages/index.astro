@@ -104,11 +104,24 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
     .nav-inner {
       max-width: 1140px; margin:0 auto;
       display: flex; align-items:center; justify-content:space-between;
-      height: 68px;
+      height: 86px;
     }
     .logo {
-      display: flex; align-items:center; gap:.6rem;
-      font-weight: 800; font-size: 1.15rem; color: var(--navy);
+      display: flex; align-items:center; text-decoration: none;
+    }
+    .logo-img {
+      height: 68px;
+      width: auto;
+      display: block;
+      padding: 4px 0;
+    }
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 68px;
+      }
+      .nav-inner {
+      height: 84px;
+      }
     }
     .logo-icon {
       width: 36px; height: 36px;
@@ -117,7 +130,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       display: flex; align-items:center; justify-content:center;
     }
     .logo-icon svg { width:20px; height:20px; }
-    .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+    .nav-links { display:flex; gap:2rem; list-style:none; align-items:center;}
     .nav-links a { color: var(--text); font-size:.9rem; font-weight:500; transition: color .2s; }
     .nav-links a:hover { color: var(--teal); }
     .nav-cta {
@@ -346,7 +359,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       .hamburger { display:block; }
       .nav-links.open {
         display:flex; flex-direction:column;
-        position:absolute; top:68px; left:0; right:0;
+        position:absolute; top:84px; left:0; right:0;
         background: rgba(255,255,255,.97); backdrop-filter: blur(20px);
         padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); gap: 1rem;
       }
@@ -355,18 +368,79 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       .cta-box { padding: 2.5rem 1.5rem; }
       footer { flex-direction:column; text-align:center; }
     }
+
+    .btn-flotante-icono {
+      position: fixed;
+      bottom: 2rem;       
+      right: 2rem;        
+      z-index: 9999;      
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      width: 56px;
+      height: 56px;
+      border-radius: 50%; 
+      
+      background-color: var(--teal-light, #00b4d8); 
+      color: #0a192f;     
+      
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      
+      cursor: pointer;
+
+      /* La animación se encarga de cambiar la opacidad a 1 y dejarla fija */
+      animation: entradaSuave 0.6s ease-out 0.8s forwards; 
+      
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Animación de aparición (se queda igual) */
+    @keyframes entradaSuave {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Efecto Hover (se queda igual) */
+    .btn-flotante-icono:hover {
+      transform: scale(1.1) translateY(-2px); 
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Ajuste fino para móviles (se queda igual) */
+    @media (max-width: 768px) {
+      .btn-flotante-icono {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 48px;
+        height: 48px;
+      }
+    }
   </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
+    
     <a href="#" class="logo">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      Bastión Defensa
+      <img 
+        src="/logo-bastion.svg" 
+        alt="Logo Bastión Defensa" 
+        class="logo-img"
+        width="160" 
+        height="40" 
+      />
     </a>
+
     <ul class="nav-links" id="navLinks">
       <li><a href="#manifiesto">Manifiesto</a></li>
       <li><a href="#servicios">Servicios</a></li>
@@ -386,12 +460,13 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Ciberseguridad en Albacete y toda España
       </div>
-      <h1>Si hoy sufres un ciberataque, <span>¿podrá tu negocio abrir mañana?</span></h1>
-      <p class="hero-sub">Porque un antivirus ya no es suficiente. Blindamos tu infraestructura para que tu empresa nunca deje de facturar.</p>
-      <p class="hero-note">Sin comerciales ni niveles de soporte. <b>Habla directamente con el ingeniero</b> que diseña y ejecuta tu defensa.</p>
+      <h1>Si hoy te atacan, <span>¿mañana facturas?</span></h1>
+      <p class="hero-sub">Protegemos tus servidores. Frenamos los ciberataques.
+      </p>
+      <p class="hero-note">Sin comerciales. <b>Habla directamente con el ingeniero</b> que diseña y ejecuta tu defensa.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn btn-primary">
-          Solicitar diagnóstico gratuito
+          Probar 14 días gratis
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="#servicios" class="btn btn-outline">Ver servicios</a>
@@ -424,9 +499,9 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
     <div class="mani-grid">
       <div class="mani-text fade-in">
         <p class="section-label">Nuestro manifiesto</p>
-        <h2>Seguridad transparente. Sin opacidad de fabricante.</h2>
-        <p>Implementamos sistemas de defensa basados en <strong>estándares abiertos</strong>. Tu seguridad no depende de pagar licencias abusivas ni de quedar atrapado en nubes cerradas.</p>
-        <p>El resultado: una protección auditable donde la propiedad de los registros y la inteligencia de defensa siempre te pertenecen.</p>
+        <h2>Seguridad transparente. Sin cajas negras.</h2>
+        <p>Implementamos sistemas de defensa basados en <strong>estándares abiertos</strong>. Tu seguridad no depende de pagar licencias abusivas ni de quedar atrapado en plataformas cerradas.</p>
+        <p>El resultado: Una protección auditable donde el control de los datos y las reglas de defensa siempre son de tu propiedad.</p>
         <div class="stack-row">
           <span class="stack-chip">Wazuh</span>
           <span class="stack-chip">TheHive</span>
@@ -455,8 +530,8 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
 <section id="servicios">
   <div class="container">
     <p class="section-label fade-in">Servicios</p>
-    <h2 class="fade-in">Plan Integral de Continuidad Operativa</h2>
-    <p class="section-desc fade-in">Proteger, endurecer y recuperar. Tu negocio bajo control <b>desde 450€/mes.</b></p>
+    <h2 class="fade-in">Defensa Activa y Monitorización 24/7</h2>
+    <p class="section-desc fade-in">Proteger, endurecer y vigilar. Tu infraestructura bajo control.</p>
     <div class="svc-grid">
       <article class="svc-card fade-in">
         <p class="svc-num">01</p>
@@ -465,7 +540,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
         </div>
         <h3>Vigilancia y Respuesta Activa</h3>
         <p>Detección de intrusiones y respuesta técnica ante amenazas críticas como Ransomware y Fuerza Bruta. Actuamos sobre tu infraestructura para neutralizar ataques antes de que afecten al negocio.</p>
-        <span class="svc-tag">24/7 · VRI</span>
+        <span class="svc-tag">24/7 · VRI (Vigilancia y Respuesta Inmediata)</span>
       </article>
       <article class="svc-card fade-in">
         <p class="svc-num">02</p>
@@ -475,15 +550,6 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
         <h3>Higiene y Auditoría Continua</h3>
         <p>Gestión proactiva de la superficie de ataque. Endurecimiento de sistemas (Hardening) y control de vulnerabilidades bajo estándares CIS Benchmarks. Evidencias reales, no suposiciones.</p>
         <span class="svc-tag">CIS · Hardening</span>
-      </article>
-      <article class="svc-card fade-in">
-        <p class="svc-num">03</p>
-        <div class="svc-icon chart">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        </div>
-        <h3>Diagnóstico de Resiliencia</h3>
-        <p>Análisis de impacto (BIA) para medir tiempos de recuperación reales, validados contra tu infraestructura. Realizamos simulacros para que sepas cuánto tardaría tu negocio en volver a operar.</p>
-        <span class="svc-tag">BIA · RTO · RPO</span>
       </article>
     </div>
   </div>
@@ -502,7 +568,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       </div>
       <div class="mario-text">
         <p class="section-label">Punto único de contacto</p>
-        <h2>Trato de experto a experto.</h2>
+        <h2>Trato directo.</h2>
         <p class="mario-role">Mario — Fundador & Arquitecto de Seguridad</p>
         <p>Bastión nace para eliminar la burocracia de las grandes firmas y poner el foco en lo que de verdad importa: la ejecución técnica.</p>
         <p>Sin filtros ni niveles de soporte: diseño tu defensa y respondo personalmente ante tus incidentes. Con total transparencia y sin retrasos.</p>
@@ -524,9 +590,9 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
     <div class="cta-box fade-in">
       <p class="section-label">Contacto</p>
       <h2>¿Listo para proteger tu negocio?</h2>
-      <p>Solicita un diagnóstico inicial sin compromiso. Hablamos de técnica, no de licencias.</p>
+      <p>Solicita tu prueba de 14 días sin compromiso. Hablamos de técnica, no de licencias.</p>
       <div class="cta-btns">
-        <a href="mailto:info@bastiondefensa.com" class="btn btn-primary">info@bastiondefensa.com</a>
+        <a href="mailto:info@bastiondefensa.com" class="btn btn-primary">Probar 14 días gratis</a>
       </div>
     </div>
   </div>
@@ -542,6 +608,14 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
   <span class="footer-logo">Bastión Defensa</span>
   <p>© 2026 Bastión Defensa. <a href="/legal" style="margin-left: 20px; color: inherit; text-decoration: underline;">Aviso Legal y Privacidad</a></p>
 </footer>
+
+<!-- Botón Flotante CTA -->
+<a href="#contacto" class="btn-flotante-icono" style="opacity: 0;" aria-label="Contactar por email">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="20" height="16" x="2" y="4" rx="2"/>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+</a>
 
 <script>
   // 1. Animaciones de entrada (Fade-in)
