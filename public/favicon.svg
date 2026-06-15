@@ -2,61 +2,14 @@
 <svg
    width="32"
    height="32"
-   viewBox="0 0 58.746742 74.11554"
+   viewBox="43.841548 113.9052 58.746742 74.11554"
    preserveAspectRatio="xMidYMid meet"
    version="1.1"
    id="svg1"
-   xml:space="preserve"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="none"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="1"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     showguides="false"
-     inkscape:zoom="1"
-     inkscape:cx="-86"
-     inkscape:cy="214.5"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer2" />
-  <defs
-     id="defs1">
-    <rect
-       x="293.49646"
-       y="482.66956"
-       width="343.94244"
-       height="59.426117"
-       id="rect4" />
-    <rect
-       x="306.01529"
-       y="403.38379"
-       width="310.18823"
-       height="91.804588"
-       id="rect2" />
-  </defs>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Capa 1"
-     transform="translate(-43.841548,-113.9052)">
-    <path
-       id="path4"
-       fill="#ffffff"
-       stroke="none"
-       d="m 73.375929,134.14684 v 3.12825 l 26.084107,8.58737 3.128254,-2.05484 z m 0,53.8739 c 0,0 -27.704454,-6.11555 -26.403273,-42.15828 l 26.403273,-8.58737 z m 0,-74.11554 v 20.24164 l -29.534381,9.66078 v -10.71887 l 11.684945,-7.63661 0.046,9.84479 6.210501,-2.11617 v -11.77695 z m 11.54693,13.06506 v 6.2105 l 6.256504,2.11617 V 124.9461 Z"
-       inkscape:label="Escudo"
-       sodipodi:nodetypes="ccccccccccccccccccccccc" />
-  </g>
+   xmlns="http://www.w3.org/2000/svg">
+  <path
+     id="path4"
+     fill="#ffffff"
+     stroke="none"
+     d="m 73.375929,134.14684 v 3.12825 l 26.084107,8.58737 3.128254,-2.05484 z m 0,53.8739 c 0,0 -27.704454,-6.11555 -26.403273,-42.15828 l 26.403273,-8.58737 z m 0,-74.11554 v 20.24164 l -29.534381,9.66078 v -10.71887 l 11.684945,-7.63661 0.046,9.84479 6.210501,-2.11617 v -11.77695 z m 11.54693,13.06506 v 6.2105 l 6.256504,2.11617 V 124.9461 Z" />
 </svg>
