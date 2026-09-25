@@ -248,8 +248,8 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
     }
     .section-desc { color: var(--text); max-width: 560px; font-size: 1rem; margin-bottom: 3rem; }
 
-    /* MANIFIESTO */
-    .manifiesto { background: var(--sky-warm); }
+    /* CHEQUEO */
+    .chequeo { background: var(--sky-warm); }
     .mani-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .mani-text p { margin-bottom: 1rem; font-size:1.02rem; }
     .stack-row { display: flex; flex-wrap:wrap; gap:.5rem; margin-top:1.5rem; }
@@ -291,7 +291,9 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       display: flex; align-items:center; justify-content:center; margin-bottom: 1.3rem;
     }
     .svc-icon.shield { background: linear-gradient(135deg, rgba(13,148,136,.12), rgba(13,148,136,.04)); color: var(--teal); }
+    .svc-icon.llave { background: linear-gradient(135deg, rgba(15,29,58,.1), rgba(15,29,58,.03)); color: var(--navy); }
     .svc-icon.lock { background: linear-gradient(135deg, rgba(15,29,58,.1), rgba(15,29,58,.03)); color: var(--navy); }
+    .svc-icon.eye { background: linear-gradient(135deg, rgba(15,29,58,.1), rgba(15,29,58,.03)); color: var(--navy); }
     .svc-icon.chart { background: var(--amber-bg); color: var(--amber); }
     .svc-card h3 { font-size: 1.08rem; font-weight: 700; color: var(--text-dark); margin-bottom: .7rem; }
     .svc-card p { font-size: .88rem; color: var(--text); line-height: 1.65; }
@@ -443,7 +445,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
     </a>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="#manifiesto">Manifiesto</a></li>
+      <li><a href="#chequeo">Qué es el chequeo</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#mario">Quién soy</a></li>
       <li><a href="#contacto" class="nav-cta">Contactar</a></li>
@@ -461,16 +463,16 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Ciberseguridad en Albacete y toda España
       </div>
-      <h1>Si hoy te atacan, <span>¿mañana facturas?</span></h1>
-      <p class="hero-sub">Protegemos tus servidores. Frenamos los ciberataques.
+      <h1><span>Tu empresa cierra los viernes.</span> Los ciberataques, no.</h1>
+      <p class="hero-sub">Vigilo tu servidor para que duermas tranquilo.
       </p>
       <p class="hero-note">Sin comerciales. <b>Habla directamente con el ingeniero</b> que diseña y ejecuta tu defensa.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn btn-primary">
-          Probar 14 días gratis
+          Pide tu Chequeo de 14 días
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+        <a href="#servicios" class="btn btn-outline">Resuelve tus dudas en una llamada de 10 minutos</a>
       </div>
     </div>
     <div class="trust-card">
@@ -495,63 +497,104 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
   </div>
 </header>
 
-<section class="manifiesto" id="manifiesto">
+<section class="chequeo" id="chequeo">
   <div class="container">
-    <div class="mani-grid">
-      <div class="mani-text fade-in">
-        <p class="section-label">Nuestro manifiesto</p>
-        <h2>Seguridad transparente. Sin cajas negras.</h2>
-        <p>Implementamos sistemas de defensa basados en <strong>estándares abiertos</strong>. Tu seguridad no depende de pagar licencias abusivas ni de quedar atrapado en plataformas cerradas.</p>
-        <p>El resultado: Una protección auditable donde el control de los datos y las reglas de defensa siempre son de tu propiedad.</p>
-        <div class="stack-row">
-          <span class="stack-chip">Wazuh</span>
-          <span class="stack-chip">TheHive</span>
-          <span class="stack-chip">MITRE ATT&CK</span>
-          <span class="stack-chip">CIS Benchmarks</span>
-          <span class="stack-chip">ENS</span>
+    <p class="section-label fade-in">Servicio inicial</p>
+    <h2 class="fade-in">Qué es el chequeo de 14 días</h2>
+    <p class="section-desc fade-in">Analizo tu empresa durante dos semanas y te comunico los principales puntos débiles y cómo arreglarlos. <b>(Desde 500€)</b></p>
+    <h3 class="fade-in">Explicado en 3 pasos</h3><br>
+    <div class="svc-grid">
+      <article class="svc-card fade-in">
+        <p class="svc-num">01</p>
+        <div class="svc-icon llave">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-      </div>
-      <div class="terminal fade-in">
-        <div class="term-dots"><i></i><i></i><i></i></div>
-        <div style="position:relative;z-index:1;">
-          <span style="opacity:.4">// estado de tu infraestructura</span><br/>
-          <span class="tg">→</span> <span class="tw">wazuh-agent</span> &nbsp;&nbsp;&nbsp;<span style="color:#34d399">● activo</span><br/>
-          <span class="tg">→</span> <span class="tw">thehive-core</span> &nbsp;&nbsp;<span style="color:#34d399">● activo</span><br/>
-          <span class="tg">→</span> <span class="tw">firewall-rules</span> &nbsp;<span style="color:#34d399">● sincronizado</span><br/>
-          <span class="tg">→</span> <span class="tw">vuln-scan</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">● ejecutando…</span><br/>
-          <span class="tg">→</span> <span class="tw">data-ownership</span> &nbsp;<span style="color:#34d399">● cliente</span><br/>
-          <br/>
-          <span style="opacity:.4">// sin cajas negras. sin dependencia.</span>
+        <h3>Puesta en marcha</h3>
+        <p>Instalo una sonda en tus sistemas sin que afecte a tu forma de trabajar.</p>
+        <span class="svc-tag">Sin impacto para tu operativa</span>
+      </article>
+      <article class="svc-card fade-in">
+        <p class="svc-num">02</p>
+        <div class="svc-icon eye">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
-      </div>
+        <h3>Investigación y análisis</h3>
+        <p>Recopilo información y evalúo cuáles son tus puntos débiles.</p>
+        <span class="svc-tag">Detección de amenazas</span>
+      </article>
+      <article class="svc-card fade-in">
+        <p class="svc-num">03</p>
+        <div class="svc-icon shield">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+        </div>
+        <h3>Resultado</h3>
+        <p>Recibes el informe en tu idioma con todo lo encontrado y qué hacer.</p>
+        <span class="svc-tag">Sin tecnicismos</span>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="servicios">
+<section class="finde" id="finde">
   <div class="container">
-    <p class="section-label fade-in">Servicios</p>
-    <h2 class="fade-in">Defensa Activa y Monitorización 24/7</h2>
-    <p class="section-desc fade-in">Proteger, endurecer y vigilar. Tu infraestructura bajo control.</p>
-    <div class="svc-grid">
-      <article class="svc-card fade-in">
-        <p class="svc-num">01</p>
-        <div class="svc-icon shield">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Vigilancia y Respuesta Activa</h3>
-        <p>Detección de intrusiones y respuesta técnica ante amenazas críticas como Ransomware y Fuerza Bruta. Actuamos sobre tu infraestructura para neutralizar ataques antes de que afecten al negocio.</p>
-        <span class="svc-tag">24/7 · VRI (Vigilancia y Respuesta Inmediata)</span>
-      </article>
-      <article class="svc-card fade-in">
-        <p class="svc-num">02</p>
-        <div class="svc-icon lock">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        </div>
-        <h3>Higiene y Auditoría Continua</h3>
-        <p>Gestión proactiva de la superficie de ataque. Endurecimiento de sistemas (Hardening) y control de vulnerabilidades bajo estándares CIS Benchmarks. Evidencias reales, no suposiciones.</p>
-        <span class="svc-tag">CIS · Hardening</span>
-      </article>
+    <p class="section-label fade-in">El punto ciego</p>
+    <h2 class="fade-in">Viernes 18:00. Nadie está mirando.</h2>
+    <p class="section-desc fade-in">
+      Esto es lo que puede pasar en tu empresa un fin de semana cualquiera, con y sin alguien vigilando.
+    </p>
+
+    <div class="finde-grid">
+      <div class="finde-col finde-col--danger fade-in">
+        <p class="finde-col-label">Sin vigilancia</p>
+        <ol class="finde-timeline">
+          <li class="finde-step">
+            <span class="finde-dot"></span>
+            <p class="finde-time">Viernes, 21:47</p>
+            <p class="finde-text">Alguien entra por un acceso remoto mal cerrado. Nadie lo ve: es fin de semana.</p>
+          </li>
+          <li class="finde-step">
+            <span class="finde-dot"></span>
+            <p class="finde-time">Sábado</p>
+            <p class="finde-text">Se mueve con calma por tu red. Tiene todo el fin de semana por delante y nadie se lo impide.</p>
+          </li>
+          <li class="finde-step">
+            <span class="finde-dot"></span>
+            <p class="finde-time">Domingo</p>
+            <p class="finde-text">Cifra tus copias de seguridad. Ya no hay marcha atrás.</p>
+          </li>
+          <li class="finde-step finde-step--end">
+            <span class="finde-dot finde-dot--end"></span>
+            <p class="finde-time">Lunes, 8:00</p>
+            <p class="finde-text finde-text--end">No puedes facturar. Ni emitir nóminas. Ni acceder a nada.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="finde-col finde-col--safe fade-in">
+        <p class="finde-col-label">Con Bastión</p>
+        <ol class="finde-timeline">
+          <li class="finde-step">
+            <span class="finde-dot"></span>
+            <p class="finde-time">Viernes, 21:52</p>
+            <p class="finde-text">Detecto el acceso 5 minutos después de producirse. Aíslo el equipo afectado.</p>
+          </li>
+          <li class="finde-step">
+            <span class="finde-dot"></span>
+            <p class="finde-time">Sábado</p>
+            <p class="finde-text">Nada que hacer. La amenaza ya está contenida desde el viernes por la noche.</p>
+          </li>
+          <li class="finde-step">
+            <span class="finde-dot"></span>
+            <p class="finde-time">Domingo</p>
+            <p class="finde-text">Sigue sin haber nada que reportar. Recibes el aviso completo, en tu idioma.</p>
+          </li>
+          <li class="finde-step finde-step--end">
+            <span class="finde-dot finde-dot--end"></span>
+            <p class="finde-time">Lunes, 8:00</p>
+            <p class="finde-text finde-text--end">Facturas con normalidad. El incidente es solo una línea en tu informe mensual.</p>
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
 </section>
@@ -593,7 +636,7 @@ const title = "Bastión Defensa | Continuidad Operativa y SecOps";
       <h2>¿Listo para proteger tu negocio?</h2>
       <p>Solicita tu prueba de 14 días sin compromiso. Hablamos de técnica, no de licencias.</p>
       <div class="cta-btns">
-        <a href="mailto:info@bastiondefensa.com?subject=Solicitud%20de%20Prueba%2014%20días%20-%20Bastión" class="btn btn-primary">Probar 14 días gratis</a>
+        <a href="mailto:info@bastiondefensa.com?subject=Solicitud%20de%20Prueba%2014%20días%20-%20Bastión" class="btn btn-primary">Contactar</a>
       </div>
     </div>
   </div>
