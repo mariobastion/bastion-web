@@ -2,16 +2,35 @@
 // src/pages/legal.astro
 const title = "Aviso Legal y Privacidad | Bastión Defensa";
 ---
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
     <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
     <style>
+        @font-face {
+            font-family: 'Plus Jakarta Sans';
+            font-style: normal;
+            font-weight: 400 800;
+            font-display: swap;
+            src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IBM Plex Mono';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+        }
         :root { --navy: #0f1d3a; --text: #475569; --teal: #0d9488; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
-        h1, h2 { color: var(--navy); }
+        h1, h2, h3 { color: var(--navy); }
+        h2 { margin-top: 2.5rem; }
+        h3 { margin-top: 1.5rem; font-size: 1.05rem; }
+        ul { padding-left: 1.3rem; }
+        li { margin-bottom: .3rem; }
         .mono { font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; color: var(--teal); }
         a { color: var(--teal); text-decoration: none; font-weight: bold; }
         footer { margin-top: 4rem; border-top: 1px solid #eee; padding-top: 2rem; }
@@ -19,33 +38,90 @@ const title = "Aviso Legal y Privacidad | Bastión Defensa";
 </head>
 <body>
     <a href="/">← Volver a Inicio</a>
-    <h1>Aviso Legal y Privacidad</h1>
-    <p class="mono">VERSIÓN_1.0_ABRIL_2026</p>
+    <h1>Aviso legal y privacidad</h1>
+    <p class="mono">Última actualización: septiembre de 2026</p>
 
     <section>
-        <h2>1. Información Identificativa</h2>
-        <p>En cumplimiento del artículo 10 de la Ley 34/2002, se exponen los datos del titular:</p>
+        <h2>1. Quién soy</h2>
+        <p>En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI):</p>
         <ul>
-            <li><strong>Responsable:</strong> Mario Muñoz Alfaro</li>
-            <li><strong>CIF/DNI:</strong> 48261177R</li>
-            <li><strong>Domicilio:</strong> Albacete, España.</li>
-            <li><strong>Contacto:</strong> info@bastiondefensa.com</li>
+            <li><strong>Titular:</strong> Mario Muñoz Alfaro, que trabaja con el nombre comercial Bastión Defensa.</li>
+            <li><strong>NIF:</strong> 48261177R</li>
+            <li><strong>Domicilio:</strong> Calle Filipinas, 2, 2ºD, C.P. 02005, Albacete (Albacete), España.</li>
+            <li><strong>Correo:</strong> info@bastiondefensa.com</li>
+            <li><strong>Web:</strong> <a href="https://www.bastiondefensa.com">www.bastiondefensa.com</a></li>
         </ul>
     </section>
 
     <section>
-        <h2>2. Protección de Datos (RGPD)</h2>
-        <p><strong>Finalidad:</strong> Solo usaremos tus datos para responder a las solicitudes de contacto y enviar diagnósticos de seguridad solicitados. No cedemos datos a terceros ni hacemos spam.</p>
-        <p><strong>Derechos:</strong> Puedes escribir a info@bastiondefensa.com para pedir que borremos tus datos o para saber qué información tenemos sobre ti.</p>
+        <h2>2. Tus datos personales</h2>
+        <p>Responsable del tratamiento: Mario Muñoz Alfaro (Bastión Defensa), con los datos de contacto de arriba.</p>
+
+        <h3>Qué datos trato</h3>
+        <ul>
+            <li>Si reservas una llamada: tu nombre, correo, teléfono, empresa y lo que escribas en las notas.</li>
+            <li>Si me escribes: tu dirección de correo y lo que me cuentes.</li>
+        </ul>
+        <p>Esta web no tiene formularios propios: las reservas se hacen en Cal.com.</p>
+
+        <h3>Para qué los uso</h3>
+        <ul>
+            <li>Organizar y atender la llamada que has reservado.</li>
+            <li>Responder a tus preguntas y, si lo pides, prepararte el Chequeo de 14 días o el servicio mensual.</li>
+        </ul>
+        <p>No los uso para enviarte publicidad ni boletines.</p>
+
+        <h3>Base legal</h3>
+        <p>Gestionar lo que me pides antes de un posible contrato (art. 6.1.b del RGPD) y mi interés legítimo en responder a tus consultas (art. 6.1.f del RGPD).</p>
+
+        <h3>Cuánto tiempo los guardo</h3>
+        <ul>
+            <li>Si no llegamos a trabajar juntos, como máximo 12 meses desde nuestro último contacto. Después los borro.</li>
+            <li>Si contratas, mientras dure la relación y, después, durante los plazos que exige la normativa fiscal y mercantil.</li>
+        </ul>
+
+        <h3>Con quién los comparto</h3>
+        <p>No vendo ni cedo tus datos. Solo los tratan, por mi cuenta y con contrato, los proveedores que necesito para trabajar:</p>
+        <ul>
+            <li>Cal.com, Inc. (EE. UU.): reservas de llamadas.</li>
+            <li>Google (Calendar y Meet): agenda y videollamadas.</li>
+            <li>Proton AG (Suiza): correo electrónico.</li>
+            <li>Cloudflare, Inc. (EE. UU.): alojamiento de esta web (Cloudflare Pages).</li>
+        </ul>
+        <p>Algunos están fuera del Espacio Económico Europeo. En esos casos, la transferencia se hace con las garantías que exige el RGPD: el Marco de Privacidad de Datos UE-EE. UU. o cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
+        <p>Solo facilitaría tus datos a una autoridad si una ley me obliga.</p>
+
+        <h3>Seguridad</h3>
+        <p>Me dedico a la ciberseguridad y protejo tus datos igual que los de mis clientes: acceso restringido y proveedores con garantías.</p>
+
+        <h3>Tus derechos</h3>
+        <p>Puedes pedirme acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de tus datos escribiendo a info@bastiondefensa.com. Te respondo en un mes como máximo. Si crees que no he tratado bien tus datos, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+
+        <p>Los datos de los equipos de una empresa que recoge la sonda cuando presto el servicio no se rigen por esta política, sino por el contrato de servicio y el contrato de encargado del tratamiento que firmamos.</p>
     </section>
 
     <section>
-        <h2>3. Propiedad Intelectual</h2>
-        <p>El código y contenido de esta web son propiedad de Bastión Defensa, diseñados para ofrecer transparencia técnica sin opacidad de fabricante.</p>
+        <h2>3. Cookies</h2>
+        <p>Esta web no usa cookies ni herramientas de analítica. Si reservas una llamada, lo haces en la web de Cal.com, que tiene su propia política de cookies.</p>
+    </section>
+
+    <section>
+        <h2>4. Propiedad intelectual</h2>
+        <p>Los textos, el diseño y el código de esta web son de Mario Muñoz Alfaro (Bastión Defensa). No se pueden copiar ni reutilizar sin mi permiso.</p>
+    </section>
+
+    <section>
+        <h2>5. Responsabilidad</h2>
+        <p>La información de esta web es orientativa y no sustituye al análisis de tu caso. Las condiciones de cada servicio son las del contrato que firmemos.</p>
+    </section>
+
+    <section>
+        <h2>6. Legislación aplicable</h2>
+        <p>Se aplica la legislación española. Para cualquier conflicto, los juzgados y tribunales de Albacete, salvo que la ley establezca otra cosa.</p>
     </section>
 
     <footer>
-        <p>Bastión Defensa - 2026</p>
+        <p>© 2026 Bastión Defensa.</p>
     </footer>
 </body>
 </html>
