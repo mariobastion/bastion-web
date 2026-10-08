@@ -93,6 +93,11 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       --amber-bg: rgba(245,158,11,.1);
       --coral: #b4382e;
       --coral-bg: rgba(180,56,46,.08);
+      --coral-light: #ff8a73;
+      --coral-glow: rgba(255,107,84,.14);
+      --coral-line: rgba(255,138,115,.32);
+      --line-dark: rgba(255,255,255,.1);
+      --shadow-xl: 0 24px 60px rgba(15,29,58,.28), 0 4px 14px rgba(15,29,58,.12);
       --text-dark: #1a2740;
       --text: #475569;
       --text-light: #94a3b8;
@@ -103,9 +108,10 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       --font: 'Plus Jakarta Sans', sans-serif;
       --mono: 'IBM Plex Mono', monospace;
       --radius: 14px;
+      --nav-h: 87px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) - 8px); }
     body {
       background: var(--white);
       color: var(--text);
@@ -126,7 +132,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     .nav-inner {
       max-width: 1140px; margin:0 auto;
       display: flex; align-items:center; justify-content:space-between;
-      height: 86px;
+      height: calc(var(--nav-h) - 1px);
     }
     .logo {
       display: flex; align-items:center; text-decoration: none;
@@ -138,11 +144,9 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       padding: 4px 0;
     }
     @media (max-width: 768px) {
+      :root { --nav-h: 85px; }
       .logo-img {
         height: 68px;
-      }
-      .nav-inner {
-      height: 84px;
       }
     }
     .nav-links { display:flex; gap:2rem; list-style:none; align-items:center;}
@@ -203,73 +207,29 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     }
     .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; animation: fadeUp .7s ease .4s both; }
 
-    .trust-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius); box-shadow: var(--shadow-lg);
-      padding: 2rem; animation: fadeUp .7s ease .3s both;
-    }
-    .trust-card h3 {
-      font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px;
-      color: var(--text-light); margin-bottom: 1.5rem;
-    }
-
-    .report-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    .report-stat { flex: 1 1 80px; min-width: 80px; }
-    .report-stat-num {
-      display: block;
-      font-family: var(--mono);
-      font-size: 1.9rem;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: .35rem;
-    }
-    .report-stat-num--coral { color: var(--coral); }
-    .report-stat-num--navy { color: var(--navy); }
-    .report-stat-num--amber { color: var(--amber); }
-    .report-stat-label {
-      display: block;
-      font-size: .72rem;
-      color: var(--text-light);
-      line-height: 1.3;
-    }
-    .report-semaforo {
-      background: var(--coral);
-      color: var(--white);
-      font-size: .82rem;
-      font-weight: 700;
-      padding: .6rem 1rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .report-finding {
-      border-top: 1px solid var(--border);
-      padding-top: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .report-finding-title {
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: .4rem;
-      line-height: 1.4;
-    }
-    .report-finding-text {
-      font-size: .82rem;
-      color: var(--text-light);
-      line-height: 1.5;
-    }
-    .report-footer {
-      font-size: .72rem;
-      color: var(--text-light);
-      text-align: center;
-      font-style: italic;
-    }
+    /* HERO · AVISO */
+    .aviso-wrap { position: relative; animation: fadeUp .7s ease .3s both; }
+    .aviso-caption { font-family: var(--mono); font-size: .72rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-light); margin: 0 0 .7rem .2rem; }
+    .aviso-card { position: relative; overflow: hidden; background: linear-gradient(160deg, var(--navy-light) 0%, var(--navy) 60%); border: 1px solid var(--line-dark); border-radius: 18px; box-shadow: var(--shadow-xl); padding: 1.5rem 1.6rem 1.6rem; color: var(--white); }
+    .aviso-card::after { content: ''; position: absolute; top: -90px; right: -90px; width: 220px; height: 220px; background: radial-gradient(circle, var(--coral-glow) 0%, transparent 70%); pointer-events: none; }
+    .aviso-head { display: flex; align-items: center; gap: .8rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line-dark); margin-bottom: 1.3rem; }
+    .aviso-avatar { width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%; background: var(--teal); color: var(--white); font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
+    .aviso-from { flex: 1; min-width: 0; line-height: 1.35; }
+    .aviso-from strong { display: block; color: var(--white); font-size: .92rem; font-weight: 700; }
+    .aviso-from span { font-size: .78rem; color: var(--text-light); }
+    .aviso-time { font-family: var(--mono); font-size: .8rem; color: var(--text-light); white-space: nowrap; }
+    .aviso-badge { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--coral-light); background: var(--coral-glow); border: 1px solid var(--coral-line); padding: .3rem .8rem; border-radius: 100px; margin-bottom: 1rem; }
+    .aviso-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--coral-light); }
+    .aviso-dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--coral-light); animation: avisoPulse 1.8s ease-out infinite; }
+    @keyframes avisoPulse { from { transform: scale(1); opacity: .7; } to { transform: scale(3); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .aviso-dot::after { animation: none; } }
+    .aviso-title { color: var(--white); font-weight: 800; font-size: 1.45rem; line-height: 1.25; margin-bottom: 1rem; letter-spacing: -.2px; }
+    .aviso-title time { font-family: var(--mono); font-weight: 500; color: var(--coral-light); white-space: nowrap; }
+    .aviso-body { font-size: .95rem; line-height: 1.6; color: var(--sky); }
+    .aviso-body p { margin-bottom: .35rem; }
+    .aviso-body ol { padding-left: 1.25rem; }
+    .aviso-body li { padding-left: .2rem; }
+    .aviso-body li::marker { color: var(--text-light); }
 
     /* BUTTONS */
     .btn {
@@ -295,7 +255,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     }
 
     /* SECTIONS */
-    section { padding: 6rem 2rem;  scroll-margin-top: 30px; }
+    section { padding: 6rem 2rem; }
     .container { max-width: 1140px; margin: 0 auto; }
     .section-label {
       font-size: .75rem; font-weight: 700; text-transform: uppercase;
@@ -393,11 +353,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       width: 48px; height: 48px; border-radius: 12px;
       display: flex; align-items:center; justify-content:center; margin-bottom: 1.3rem;
     }
-    .svc-icon.shield { background: linear-gradient(135deg, rgba(13,148,136,.12), rgba(13,148,136,.04)); color: var(--teal); }
-    .svc-icon.llave { background: linear-gradient(135deg, rgba(15,29,58,.1), rgba(15,29,58,.03)); color: var(--navy); }
-    .svc-icon.lock { background: linear-gradient(135deg, rgba(15,29,58,.1), rgba(15,29,58,.03)); color: var(--navy); }
-    .svc-icon.eye { background: linear-gradient(135deg, rgba(15,29,58,.1), rgba(15,29,58,.03)); color: var(--navy); }
-    .svc-icon.chart { background: var(--amber-bg); color: var(--amber); }
+    .svc-icon.shield { background: var(--teal-bg); color: var(--teal); }
     .svc-card h3 { font-size: 1.08rem; font-weight: 700; color: var(--text-dark); margin-bottom: .7rem; }
     .svc-card p { font-size: .88rem; color: var(--text); line-height: 1.65; }
     .svc-tag {
@@ -469,7 +425,8 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
 
     @media (max-width: 640px) {
       .porque-table { font-size: .82rem; }
-      .porque-table th, .porque-table td { padding: .7rem .8rem; }
+      .porque-table th, .porque-table td { padding: .7rem .5rem; }
+      .porque-table td:first-child { white-space: normal; }
       .porque-objecion { padding: 1.6rem; }
     }
 
@@ -537,9 +494,6 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     .mario-section h2 { color: var(--white); }
     .mario-role { font-family: var(--mono); font-size: .82rem; color: var(--teal-light); margin-bottom: 1.2rem; }
     .mario-section p { margin-bottom: .8rem; }
-    .pills { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap:wrap; }
-    .pill { display: flex; align-items:center; gap:.45rem; font-size: .82rem; color: rgba(255,255,255,.5); }
-    .pill-dot { width: 7px; height: 7px; background: var(--teal-light); border-radius: 50%; }
 
     /* CTA */
     .cta-section { background: var(--sky-warm); text-align:center; }
@@ -575,7 +529,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
 
     @media (max-width: 960px) {
       .hero-inner { grid-template-columns:1fr; }
-      .trust-card { max-width: 420px; }
+      .aviso-wrap { max-width: 420px; }
       .svc-grid { grid-template-columns:1fr; max-width:480px; }
       .mario-grid { grid-template-columns:1fr; text-align:center; justify-items:center; }
     }
@@ -584,16 +538,28 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       .hamburger { display:block; }
       .nav-links.open {
         display:flex; flex-direction:column;
-        position:absolute; top:84px; left:0; right:0;
+        position:absolute; top:calc(var(--nav-h) - 1px); left:0; right:0;
         background: rgba(255,255,255,.97); backdrop-filter: blur(20px);
         padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); gap: 1rem;
       }
       section { padding: 4rem 1.2rem; }
-      .hero { padding: 8rem 1.2rem 4rem; }
-      .trust-card { padding: 1.5rem; }
-      .report-stats { gap: .8rem; }
+      .hero { padding: calc(var(--nav-h) + 1rem) 1.2rem 4rem; }
+      .hero-text {
+        min-height: calc(100vh - var(--nav-h) - 1rem);
+        min-height: calc(100svh - var(--nav-h) - 1rem);
+        display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+        padding-bottom: 1rem;
+      }
+      .aviso-card { padding: 1.3rem 1.2rem; }
+      .aviso-title { font-size: 1.3rem; }
       .cta-box { padding: 2.5rem 1.5rem; }
       footer { flex-direction:column; text-align:center; }
+    }
+    @media (max-width: 640px) and (max-height: 620px) {
+      .hero-badge { margin-bottom: 1rem; }
+      h1 { font-size: 2rem; margin-bottom: 1rem; }
+      .hero-sub { margin-bottom: .7rem; }
+      .hero-note { margin-bottom: 1.2rem; }
     }
 
     .btn-flotante-icono {
@@ -865,7 +831,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
 
 <header class="hero" id="inicio">
   <div class="hero-inner">
-    <div>
+    <div class="hero-text">
       <div class="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Ciberseguridad para PYMEs · desde Albacete
@@ -881,28 +847,27 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         <a href="https://cal.com/mariobastion/10min" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Resuelve tus dudas en una llamada de 10 minutos</a>
       </div>
     </div>
-    <div class="trust-card">
-      <h3>Ejemplo de informe del chequeo</h3>
-      <div class="report-stats">
-        <div class="report-stat">
-          <span class="report-stat-num report-stat-num--coral">3</span>
-          <span class="report-stat-label">riesgos importantes</span>
+    <div class="aviso-wrap">
+      <p class="aviso-caption">Ejemplo de aviso</p>
+      <article class="aviso-card" aria-label="Ejemplo de aviso de una alerta crítica">
+        <div class="aviso-head">
+          <div class="aviso-avatar" aria-hidden="true">M</div>
+          <div class="aviso-from">
+            <strong>Mario · Bastión</strong>
+            <span>Para ti y tu informático</span>
+          </div>
+          <span class="aviso-time">Sáb 08:40</span>
         </div>
-        <div class="report-stat">
-          <span class="report-stat-num report-stat-num--navy">14</span>
-          <span class="report-stat-label">días vigilados</span>
+        <span class="aviso-badge"><span class="aviso-dot" aria-hidden="true"></span>Alerta crítica</span>
+        <p class="aviso-title">Anoche, a las <time>21:47</time>, alguien entró en tu servidor</p>
+        <div class="aviso-body">
+          <p>Qué tiene que hacer tu informático:</p>
+          <ol>
+            <li>Cerrar ese acceso remoto.</li>
+            <li>Cambiar la contraseña de la cuenta que usaron.</li>
+          </ol>
         </div>
-        <div class="report-stat">
-          <span class="report-stat-num report-stat-num--amber">2</span>
-          <span class="report-stat-label">acciones urgentes para tu informático</span>
-        </div>
-      </div>
-      <div class="report-semaforo">Riesgo alto · actuar esta semana</div>
-      <div class="report-finding">
-        <p class="report-finding-title">Tu servidor acepta contraseñas desde fuera de la oficina.</p>
-        <p class="report-finding-text">Tu informático puede cerrarlo esta semana, sin comprar nada.</p>
-      </div>
-      <p class="report-footer">Datos de ejemplo. El tuyo llega a los 14 días.</p>
+      </article>
     </div>
   </div>
 </header>
@@ -923,7 +888,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     <div class="svc-grid">
       <article class="svc-card fade-in">
         <p class="svc-num">01</p>
-        <div class="svc-icon llave">
+        <div class="svc-icon shield">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
         <h3>Puesta en marcha</h3>
@@ -932,7 +897,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       </article>
       <article class="svc-card fade-in">
         <p class="svc-num">02</p>
-        <div class="svc-icon eye">
+        <div class="svc-icon shield">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
         <h3>Investigación y análisis</h3>
@@ -1050,7 +1015,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         <span class="svc-tag">Todos los días del año</span>
       </article>
       <article class="svc-card fade-in">
-        <div class="svc-icon lock">
+        <div class="svc-icon shield">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
         </div>
         <h3>Aviso claro</h3>
@@ -1058,7 +1023,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         <span class="svc-tag">Tú decides</span>
       </article>
       <article class="svc-card fade-in">
-        <div class="svc-icon chart">
+        <div class="svc-icon shield">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
         <h3>Informe mensual</h3>
@@ -1077,8 +1042,8 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     <h2 class="fade-in">No te vendo nada más</h2>
 
     <div class="porque-intro fade-in">
-      <p>No vendo antivirus, equipos ni horas de arreglos, y no sustituyo a tu informático. Mi único interés es contarte la verdad sobre tu red, en tu idioma, y comprobar que se arregla.</p>
-      <p>Sin licencias que suben cada año y sin permanencia. Tus datos son tuyos: si lo dejas, te los llevas y borro el resto.</p>
+      <p>No vendo antivirus, equipos ni horas de arreglos, y no sustituyo a tu informático.</p>
+      <p>Mi único interés es contarte la verdad sobre tu red y comprobar que se arregla.</p>
     </div>
 
     <div class="porque-table-wrap fade-in">
@@ -1130,14 +1095,10 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         />
       </div>
       <div class="mario-text">
-        <p class="section-label">Punto único de contacto</p>
+        <p class="section-label">Quién soy</p>
         <h2>Trato directo.</h2>
         <p class="mario-role">Mario — Fundador & Ingeniero de ciberseguridad</p>
-        <p>Con 7 años de experiencia en ciberseguridad en grandes empresas, ahora llevo lo aprendido a PYMEs como la tuya, sin su burocracia: vigilo tu red y te atiendo yo mismo, sin intermediarios.</p>
-        <div class="pills">
-          <div class="pill"><div class="pill-dot"></div>Sin comerciales</div>
-          <div class="pill"><div class="pill-dot"></div>Hablas siempre conmigo</div>
-        </div>
+        <p>Soy quien vigila tu red y te avisa si algo no va bien.</p>
         <a href="https://linkedin.com/in/mario-munoza" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 1.5rem; border-color: var(--teal-light); color: var(--teal-light);">
           Ver perfil profesional en LinkedIn
         </a>
@@ -1148,38 +1109,37 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
 
 <section class="preguntas" id="preguntas">
   <div class="container">
-    <p class="section-label fade-in">Sin letra pequeña</p>
     <h2 class="fade-in">Preguntas frecuentes</h2>
     <div class="faq-list fade-in">
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>¿Cuánto cuesta?<span class="faq-icon"></span></summary>
         <p>El Chequeo de 14 días cuesta 900 € + IVA, con hasta 2 servidores y 10 puestos de trabajo. La vigilancia mensual, desde 390 €/mes + IVA con el mismo tamaño. Sin coste de licencias. Y si contratas la vigilancia en los 30 días siguientes al chequeo, el chequeo te sale gratis.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>¿Puedo contratar directamente el servicio mensual?<span class="faq-icon"></span></summary>
         <p>Sí, pero siempre empezamos por el chequeo: son los primeros 14 días del servicio. Si continúas, te lo descuento entero de las tres primeras cuotas, así que te cuesta lo mismo. La diferencia es que, si no te convence, te quedas con tu informe y no pagas nada más.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>¿Esto no lo hace ya mi antivirus o mi informático?<span class="faq-icon"></span></summary>
         <p>El antivirus intenta impedir que entre algo conocido; yo vigilo lo que pasa dentro por si algo se cuela, y aviso. Tu informático sigue siendo tu informático: le doy visibilidad que hoy no tiene.</p>
       </details>
-      <!-- TODO: pregunta "¿Y si no tengo informático?" pendiente de que Mario tenga su lista de profesionales de confianza a los que derivar -->
-      <details class="faq-item">
+      <!-- TODO: pregunta "¿Y si no tengo informático?" pendiente de que Mario tenga su lista de profesionales de confianza a los que derivar Al publicarla, el <details> debe llevar class="faq-item" name="faq". -->
+      <details class="faq-item" name="faq">
         <summary>¿Eres tú solo? ¿Qué pasa si no estás?<span class="faq-icon"></span></summary>
         <p>Sí, y es a propósito: trabajo con un número limitado de empresas para poder atenderlas yo mismo. La sonda vigila sola las 24 horas y te aviso en los plazos acordados.</p>
         <!-- TODO: añadir que las alertas críticas también llegan al informático del cliente (plan de respaldo), cuando Mario confirme que está montado -->
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>¿Tocas mis sistemas o arreglas tú lo que encuentras?<span class="faq-icon"></span></summary>
         <p>No. Te digo qué hay que arreglar, en qué orden y por qué, se lo explico a tu informático para que lo haga él y después compruebo que ha quedado bien. Si detecto algo un sábado de madrugada, os aviso a ti y a tu informático antes de las 10:00, y la decisión es vuestra.</p>
       </details>
-      <!-- TODO: pregunta "¿Y si detectas un ataque en marcha?" pendiente de que Mario tenga localizado un especialista en respuesta a incidentes al que derivar. Respuesta prevista: "Te aviso a ti y a tu informático con los primeros pasos para frenarlo. La investigación del ataque la hace un especialista en respuesta a incidentes, y te digo a quién acudir." -->
-      <!-- TODO: pregunta "¿Ves mis datos, mis correos, mis nóminas?" pendiente del contrato de encargado del tratamiento (RGPD) y de confirmar que el servidor de Hetzner está en la UE. Respuesta prevista: "La sonda vigila la actividad y la configuración de los equipos, no el contenido de tus documentos ni de tus correos." -->
-      <details class="faq-item">
+      <!-- TODO: pregunta "¿Y si detectas un ataque en marcha?" pendiente de que Mario tenga localizado un especialista en respuesta a incidentes al que derivar. Respuesta prevista: "Te aviso a ti y a tu informático con los primeros pasos para frenarlo. La investigación del ataque la hace un especialista en respuesta a incidentes, y te digo a quién acudir." Al publicarla, el <details> debe llevar class="faq-item" name="faq". -->
+      <!-- TODO: pregunta "¿Ves mis datos, mis correos, mis nóminas?" pendiente del contrato de encargado del tratamiento (RGPD) y de confirmar que el servidor de Hetzner está en la UE. Respuesta prevista: "La sonda vigila la actividad y la configuración de los equipos, no el contenido de tus documentos ni de tus correos." Al publicarla, el <details> debe llevar class="faq-item" name="faq". -->
+      <details class="faq-item" name="faq">
         <summary>¿Y si nunca pasa nada? ¿Pago por nada?<span class="faq-icon"></span></summary>
         <p>Cada mes recibes un informe con lo que se ha intentado, lo que se ha revisado y lo que conviene corregir. Que no pase nada también es el resultado.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>¿Tengo permanencia? ¿Qué pasa si lo dejo?<span class="faq-icon"></span></summary>
         <p>No hay permanencia: pagas mes a mes y puedes dejarlo avisando con 30 días. Te entrego todos tus informes y, si los quieres, tus alertas en un formato abierto. Después borro tus datos y te envío un certificado de borrado.</p>
       </details>

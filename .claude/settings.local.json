@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/home/mario/.vscode-server/bin/2242ebbb54efeeb0129e08e919e7e8d43033cd83/node ./node_modules/.bin/astro build)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/preview.html --max-time 5)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/preview2.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/preview3.html --max-time 5)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:4321/ --max-time 5)",
+      "Bash(curl -s -o /tmp/preview5.html -w \"status: %{http_code}\\\\n\" http://127.0.0.1:4321/ --max-time 5)",
+      "Bash(grep -n \"^## 4\\\\|^1\\\\. \\\\*\\\\*\\\\|^2\\\\. \\\\*\\\\*\\\\|^3\\\\. \\\\*\\\\*\\\\|^4\\\\. \\\\`\\\\|^5\\\\. \\\\*\\\\*\\\\|^6\\\\. \\\\*\\\\*\\\\|^7\\\\. Texto\\\\|^8\\\\. El enlace\\\\|^9\\\\. El CTA\\\\|^10\\\\. \\\\*\\\\*CSS\" /home/mario/bastion-web/CLAUDE.md)",
+      "Bash(curl -s -o /tmp/final2.html -w \"%{http_code}\\\\n\" http://127.0.0.1:4321/ --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/full_check.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/tarea1.html --max-time 5)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4321/ --max-time 5)",
+      "Bash(echo \"status: $\\(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4321/ --max-time 5\\)\")",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/tarea2.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/tarea3.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/tarea4.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/tarea5.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/tarea6.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/tarea7.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/final_r2.html --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ -o /tmp/precio_chip.html --max-time 5)",
+      "Bash(curl -s -o /dev/null -w \"status: %{http_code}\\\\n\" http://127.0.0.1:4321/ --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ --max-time 5)",
+      "Bash(curl -s http://127.0.0.1:4321/ --max-time 5 -o /tmp/botones.html)",
+      "Bash(curl -s http://127.0.0.1:4321/ --max-time 5 -o /tmp/precios.html)",
+      "Bash(grep -o 'Qué es el chequeo de 14 días</h2>.\\\\{0,60\\\\}' /tmp/precios.html)",
+      "Bash(/home/mario/.vscode-server/bin/*/node ./node_modules/.bin/astro build)",
+      "Bash(curl -s http://127.0.0.1:4321/ --max-time 5 -o /tmp/final_precios.html)",
+      "Bash(grep -o 'vigilancia todos los días del año</h2>.\\\\{0,50\\\\}' /tmp/final_precios.html)",
+      "Bash(grep -o 'Qué es el chequeo de 14 días</h2>.\\\\{0,900\\\\}' /tmp/orden.html)",
+      "Bash(grep -o 'vigilancia todos los días del año</h2>.\\\\{0,900\\\\}' /tmp/orden.html)",
+      "Bash(grep -o 'Qué es el chequeo de 14 días</h2>.\\\\{0,2500\\\\}' /tmp/orden.html)",
+      "Bash(grep -o 'vigilancia todos los días del año</h2>.\\\\{0,2500\\\\}' /tmp/orden.html)",
+      "Bash(curl -s http://127.0.0.1:4321/ --max-time 5 -o /tmp/priceblock2.html)"
+    ]
+  }
+}
