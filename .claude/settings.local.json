@@ -34,7 +34,11 @@
       "Bash(grep -o 'vigilancia todos los días del año</h2>.\\\\{0,900\\\\}' /tmp/orden.html)",
       "Bash(grep -o 'Qué es el chequeo de 14 días</h2>.\\\\{0,2500\\\\}' /tmp/orden.html)",
       "Bash(grep -o 'vigilancia todos los días del año</h2>.\\\\{0,2500\\\\}' /tmp/orden.html)",
-      "Bash(curl -s http://127.0.0.1:4321/ --max-time 5 -o /tmp/priceblock2.html)"
+      "Bash(curl -s http://127.0.0.1:4321/ --max-time 5 -o /tmp/priceblock2.html)",
+      "Bash(export LD_LIBRARY_PATH=$SP/libroot/usr/lib/x86_64-linux-gnu)",
+      "Bash(PLAYWRIGHT_BROWSERS_PATH=/tmp/claude-1000/-home-mario-bastion-web/19d42d58-db66-4d4a-8864-2cbf8984ca15/scratchpad/browsers ./venv/bin/python fontcheck.py)",
+      "Bash(pkill -f \"astro dev --host 127.0.0.1 --port 4321\")",
+      "Bash(curl -s -o /dev/null -w \"4321 tras parar: %{http_code}\\\\n\" --max-time 3 http://127.0.0.1:4321/)"
     ]
   }
 }
