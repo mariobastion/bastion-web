@@ -125,7 +125,7 @@ La lógica: arriba, la salida rápida para quien ya está convencido (hero + ofe
   - Una reunión de 45 minutos para explicarte el informe.
   - Una llamada con tu informático para pasarle la parte técnica.
   - 30 días comprobando que las correcciones quedan bien.
-- Línea destacada debajo (retocada por Mario en VS Code): *"Si después contratas la vigilancia en los 30 días siguientes, el chequeo te sale gratis: te lo descuento de tus tres primeras cuotas."*
+- Línea destacada debajo (`.incluye-descuento`): *"Si contratas la vigilancia en los 30 días siguientes, el chequeo te sale gratis."* La palabra "vigilancia" es un enlace interno a `#vigilancia` (subrayado, misma pestaña). Ya no menciona "las tres primeras cuotas": ese detalle va en la FAQ 2 y en la sección 2.
 
 ### 6.1 Historia — línea de tiempo comparada (`#historia`)
 
