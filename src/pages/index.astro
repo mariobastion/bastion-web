@@ -356,15 +356,6 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     /* VIGILANCIA */
     .vigilancia { background: var(--sky-warm); }
     .vigilancia .section-desc { margin-bottom: 1.5rem; }
-    .plazos-aviso {
-      margin-top: 1.5rem;
-      font-family: var(--mono);
-      font-size: .85rem;
-      color: var(--text-light);
-      border-left: 3px solid var(--teal);
-      padding-left: 1rem;
-      max-width: 640px;
-    }
 
     /* POR QUÉ */
     .porque-intro { max-width: 640px; margin-bottom: 3rem; }
@@ -1021,8 +1012,6 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         <span class="svc-tag">Llega aunque no pase nada</span>
       </article>
     </div>
-
-    <p class="plazos-aviso fade-in">Si salta algo grave en horario de oficina, te aviso en menos de 1 hora. Si pasa de noche, en fin de semana o en festivo, como tarde a las 10:00 de la mañana.</p>
   </div>
 </section>
 
@@ -1121,7 +1110,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       </details>
       <details class="faq-item" name="faq">
         <summary>¿Tocas mis sistemas o arreglas tú lo que encuentras?<span class="faq-icon"></span></summary>
-        <p>No. Te digo qué hay que arreglar, en qué orden y por qué, se lo explico a tu informático para que lo haga él y después compruebo que ha quedado bien. Si detecto algo un sábado de madrugada, os aviso a ti y a tu informático antes de las 10:00, y la decisión es vuestra.</p>
+        <p>No. Te digo qué hay que arreglar, en qué orden y por qué, se lo explico a tu informático para que lo haga él y después compruebo que ha quedado bien. Si detecto algo un sábado de madrugada, os aviso a ti y a tu informático, y la decisión es vuestra.</p>
       </details>
       <!-- TODO: pregunta "¿Y si detectas un ataque en marcha?" pendiente de que Mario tenga localizado un especialista en respuesta a incidentes al que derivar. Respuesta prevista: "Te aviso a ti y a tu informático con los primeros pasos para frenarlo. La investigación del ataque la hace un especialista en respuesta a incidentes, y te digo a quién acudir." Al publicarla, el <details> debe llevar class="faq-item" name="faq". -->
       <!-- TODO: pregunta "¿Ves mis datos, mis correos, mis nóminas?" pendiente del contrato de encargado del tratamiento (RGPD) y de confirmar que el servidor de Hetzner está en la UE. Respuesta prevista: "La sonda vigila la actividad y la configuración de los equipos, no el contenido de tus documentos ni de tus correos." Al publicarla, el <details> debe llevar class="faq-item" name="faq". -->

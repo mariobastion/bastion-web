@@ -39,7 +39,7 @@ Contexto para trabajar en la landing de bastiondefensa.com (proyecto Astro). Lé
    - **Descuento:** si contrata la vigilancia en los 30 días siguientes a la entrega del informe, le descuento el chequeo entero, repartido en las tres primeras cuotas.
 2. **Vigilancia continua mensual** — **190 €/mes + IVA, hasta 20 equipos, servidores incluidos** (sin "desde"). Incluye detección todos los días del año (fines de semana y festivos también), aviso al cliente y a su informático con qué hacer, revisión de la configuración de sus equipos e informe mensual con una sola cifra ("nivel de exposición") y su tendencia.
    - **Sin permanencia:** pago mes a mes. En la web solo se dice "Sin permanencia"; el plazo de preaviso para darse de baja va en el contrato, **no se publica**.
-   - **Tiempos de aviso de alertas críticas.** Texto que va en la web (sencillo, sin "del día siguiente" por ambiguo): *"Si salta algo grave en horario de oficina, te aviso en menos de 1 hora. Si pasa de noche, en fin de semana o en festivo, como tarde a las 10:00 de la mañana."* La definición exacta (horario de oficina de lunes a viernes de 9:00 a 18:00; fuera de él, como tarde a las 10:00 de la mañana siguiente, fines de semana y festivos incluidos) va en el contrato, no en la web.
+   - **Tiempos de aviso de alertas críticas: no se publican en la web.** Van en el contrato y se explican en la llamada (definición interna: horario de oficina de lunes a viernes de 9:00 a 18:00 con aviso en menos de 1 hora; fuera de él, como tarde a las 10:00 de la mañana siguiente, fines de semana y festivos incluidos). Es información para Mario, no para publicar.
    - **Número limitado de clientes**, para poder atenderlos a todos yo mismo. El número exacto no se publica.
 3. **No hay servicio de corrección ni de respuesta a incidentes.** Bastión nunca toca los sistemas del cliente (la única excepción es instalar la sonda si no hay informático). No arreglo nada: digo qué hay que arreglar, en qué orden y por qué, y lo ejecuta el informático del cliente. Tampoco hago respuesta a incidentes ni análisis forense: si detecto un ataque en marcha, aviso al gerente y a su informático con los primeros pasos y les digo a quién acudir. La respuesta automática no se ofrece ni se menciona en la web.
 
@@ -56,8 +56,8 @@ Contexto para trabajar en la landing de bastiondefensa.com (proyecto Astro). Lé
 1. **Se escribe para el gerente, no para un ingeniero.** Se vende su problema resuelto (seguir facturando el lunes), no la tecnología. Prohibido en el cuerpo de la web: CVE, CVSS, SCA, hardening, CIS Benchmarks, SecOps, superficie de ataque, fuerza bruta, postura de seguridad. Si un término técnico es imprescindible, se explica en la misma frase.
 2. **Voz: primera persona del singular y tuteo** ("vigilo", "te aviso", "tu empresa"). Nunca "nosotros", "monitorizamos", "actuamos".
 3. **Sin promesas absolutas** tipo "frenamos los ciberataques". Se vende detectar y avisar a tiempo.
-4. **No prometer respuesta automática**, aislamiento de equipos ni bloqueos automáticos. Los **únicos plazos que se publican** son los de la sección 2 (aviso de alertas críticas y contestación del correo), con el texto sencillo de la sección 6.2; la definición exacta va en el contrato. La prudencia es un argumento de venta: *"No toco tus sistemas: te aviso y tu informático actúa."*
-5. **Distinguir detección de respuesta.** La detección 24/7 es automática y sí se puede decir. Una respuesta humana 24/7 no: trabajo solo, y los plazos de aviso son los de la sección 2.
+4. **No prometer respuesta automática**, aislamiento de equipos ni bloqueos automáticos. El único plazo que se publica es la contestación del correo (mismo día laborable); los plazos de aviso de alertas no se publican (regla 17). La prudencia es un argumento de venta: *"No toco tus sistemas: te aviso y tu informático actúa."*
+5. **Distinguir detección de respuesta.** La detección 24/7 es automática y sí se puede decir. Una respuesta humana 24/7 no: trabajo solo, y los plazos de aviso van en el contrato.
 6. **Cero datos inventados.** Ni estadísticas sin fuente citada en la propia página, ni testimonios, clientes, logos, certificaciones o años de experiencia que yo no te haya dado. Si falta un dato, pregúntame. Si todavía no lo tengo, deja ese elemento comentado en el HTML con `<!-- TODO: ... -->`. Nunca lo publiques con texto de relleno.
 7. **El código abierto no es el mensaje principal.** Es un argumento de cierre (sin licencias que suben en cada renovación, sin permanencia, tus datos son tuyos, todo revisable) y vive en la sección "por qué yo".
 8. **CTAs específicos:** dicen qué recibes y cuánto dura. Principal: **"Pide tu Chequeo de 14 días"**. Secundario: **"Resuelve tus dudas en una llamada de 10 minutos"** (o "Prefiero una llamada de 10 minutos" en el CTA final). Prohibido "Contactar", "Más información", "Ver servicios".
@@ -69,6 +69,7 @@ Contexto para trabajar en la landing de bastiondefensa.com (proyecto Astro). Lé
 14. **Todos los precios se publican sin IVA y siempre con "+ IVA" visible.** En `#chequeo` y `#vigilancia`, mismo orden: título → frase corta → bloque de precio unificado (`.price-block`) → tarjetas → resto.
 15. **Los precios de lanzamiento o descuentos puntuales que pacte en llamadas nunca se publican en la web.**
 16. **Ubicación: Albacete solo aparece en el pie de página (`.local-section` y `<footer>`), en el aviso legal y en la dirección postal del JSON-LD.** Nunca en el hero, titulares, títulos de sección, `title`, `description`, Open Graph, Twitter ni `keywords`. La web se vende para toda España y en remoto.
+17. **La web no publica plazos de aviso como compromiso; van en el contrato.** Las únicas referencias horarias son la historia del punto ciego (`#historia`) y la tarjeta de ejemplo del hero. No escribas "menos de 1 hora", "antes de las 10:00", "horario de oficina" ni similares en ninguna otra parte (FAQ, metadatos, JSON-LD).
 
 ---
 
@@ -100,7 +101,7 @@ La lógica: arriba, la salida rápida para quien ya está convencido (hero + ofe
 | 1 | `inicio` | Hero: "Tu empresa cierra los viernes. Los ciberataques, no." Badge: "Ciberseguridad para PYMEs". Subtítulo: "Yo vigilo. Tu informático arregla. Tú duermes tranquilo." Nota: "Descubre qué está pasando en tu red." Columna derecha: tarjeta "Ejemplo de aviso" con formato de correo (ver 6.8; ya no hay vista previa del informe). | Hecho. No cambiar el titular. Botón principal → cal.com/30min, botón secundario → cal.com/10min, ambos en pestaña nueva. **Albacete no aparece en la portada ni en titulares ni en metadatos** (ver regla 16) |
 | 2 | `chequeo` | "Qué es el chequeo de 14 días" (etiqueta "Servicio inicial") | Hecho, con "Además, incluye:" (3 puntos) y descuento |
 | 3 | `historia` | "Viernes 18:00. Nadie está mirando." (etiqueta "El punto ciego") | Hecho, columna "Con Bastión" definitiva |
-| 4 | `vigilancia` | "Y a partir de ahí, vigilancia todos los días del año" | Hecho, con precio y plazos |
+| 4 | `vigilancia` | "Y a partir de ahí, vigilancia todos los días del año" | Hecho, con precio |
 | 5 | `por-que` | "No te vendo nada más" (etiqueta "La diferencia") | Hecho, introducción de 2 líneas y tabla de 3 filas |
 | 6 | `mario` | "Trato directo." (etiqueta "Quién soy") | Hecho. Definitivo: sin píldoras |
 | 7 | `preguntas` | "Preguntas frecuentes" | Hecho, reorganizada: 7 respuestas publicadas y 3 comentadas con TODO |
@@ -158,7 +159,6 @@ Descripción: *"A las 18:00 se va el último. A las 21:47 entra alguien. Esto es
   - **Vigilancia continua.** La sonda sigue vigilando tu servidor y tus equipos todos los días, incluidos fines de semana y festivos. Etiqueta: "Todos los días del año".
   - **Aviso claro.** Si pasa algo, te aviso a ti y a tu informático con lo que hay que hacer, en tu idioma. No toco tus sistemas: la decisión es vuestra. Etiqueta: "Tú decides".
   - **Informe mensual.** Cada mes, un resumen corto: una sola cifra, tu nivel de exposición, y si sube o baja. Además, qué conviene corregir. Etiqueta: "Llega aunque no pase nada".
-- **Plazos de aviso** (al final, después de las tarjetas, no forma parte del bloque de precio; sin "del día siguiente" por ambiguo): *"Si salta algo grave en horario de oficina, te aviso en menos de 1 hora. Si pasa de noche, en fin de semana o en festivo, como tarde a las 10:00 de la mañana."*
 
 ### 6.3 Por qué yo (`#por-que`)
 
@@ -172,7 +172,7 @@ Descripción: *"A las 18:00 se va el último. A las 21:47 entra alguien. Esto es
   - Qué más te venden: Licencias, equipos o paquetes / Nada. Vigilo y te aviso.
   - Tu informático: Compiten con él / Trabajo con él, no en su lugar.
   - **La tabla tiene exactamente estas tres filas. No añadir más: la permanencia y el precio se explican en las preguntas frecuentes.** (Se probaron y se quitaron las filas "Permanencia", "Si te vas", "Qué pagas" y "aviso de una alerta crítica".)
-  - **No comparar tiempos de aviso con otros proveedores en esta tabla: están en `#vigilancia`.**
+  - **No comparar tiempos de aviso con otros proveedores en esta tabla** (no se publican plazos, regla 17).
   - En móvil (≤640px) la primera columna puede partir línea y el relleno lateral de las celdas es de .5rem: sin ese ajuste la tabla se desborda a 360px y 320px (medido en navegador). No lo quites.
   - La columna "Proveedor grande" debe quedar genérica y prudente; no afirmes nada concreto sobre competidores.
 - Bloque **"¿Y si solo eres tú?"**: *"Trabajo con un número limitado de empresas para poder atenderlas yo mismo. La sonda vigila sola las 24 horas, esté yo delante o no, y te aviso en los plazos acordados."* El plan de respaldo (alertas críticas enviadas también a tu informático) queda comentado con TODO hasta que yo confirme que está montado.
@@ -198,7 +198,7 @@ Solo 7 preguntas visibles (reorganizado; antes había 12 publicadas):
 3. **¿Esto no lo hace ya mi antivirus o mi informático?** El antivirus intenta impedir que entre algo conocido; yo vigilo lo que pasa dentro por si algo se cuela, y aviso. Tu informático sigue siendo tu informático: le doy visibilidad que hoy no tiene.
    - *[Comentada con TODO tras esta pregunta: "¿Y si no tengo informático?", pendiente de que Mario tenga su lista de profesionales de confianza.]*
 4. **¿Eres tú solo? ¿Qué pasa si no estás?** Sí, y es a propósito: trabajo con un número limitado de empresas para poder atenderlas yo mismo. La sonda vigila sola las 24 horas y te aviso en los plazos acordados. *(Frase del respaldo comentada con TODO hasta que yo confirme las alertas al informático.)*
-5. **¿Tocas mis sistemas o arreglas tú lo que encuentras?** No. Te digo qué hay que arreglar, en qué orden y por qué, se lo explico a tu informático para que lo haga él y después compruebo que ha quedado bien. Si detecto algo un sábado de madrugada, os aviso a ti y a tu informático antes de las 10:00, y la decisión es vuestra.
+5. **¿Tocas mis sistemas o arreglas tú lo que encuentras?** No. Te digo qué hay que arreglar, en qué orden y por qué, se lo explico a tu informático para que lo haga él y después compruebo que ha quedado bien. Si detecto algo un sábado de madrugada, os aviso a ti y a tu informático, y la decisión es vuestra.
    - *[Comentadas con TODO tras esta pregunta: "¿Y si detectas un ataque en marcha?" (pendiente del especialista en respuesta a incidentes) y "¿Ves mis datos, mis correos, mis nóminas?" (pendiente del contrato RGPD y de confirmar dónde está el servidor).]*
 6. **¿Y si nunca pasa nada? ¿Pago por nada?** Cada mes recibes un informe con lo que se ha intentado, lo que se ha revisado y lo que conviene corregir. Que no pase nada también es el resultado.
 7. **¿Tengo permanencia? ¿Qué pasa si lo dejo?** No hay permanencia: pagas mes a mes. Te entrego todos tus informes y, si los quieres, tus alertas en un formato abierto. Después borro tus datos y te envío un certificado de borrado.
@@ -239,7 +239,7 @@ Reglas:
 - Es un **ejemplo declarado**: la etiqueta "Ejemplo de aviso" va **siempre visible** (regla 6, cero datos inventados presentados como reales).
 - **Sin más texto, sin iconos y sin cajas**: tiene que parecer un correo, no una app.
 - El titular es un `<p>`: sigue habiendo **un solo `h1`** y la estructura de encabezados no cambia.
-- **Las horas deben cuadrar** con los plazos de aviso (6.2) y con la columna "Con Bastión" de `#historia`: entrada el viernes a las 21:47 y aviso el sábado a las 08:40 (antes de las 10:00; cae en el caso "de noche / fin de semana"). Si cambias la hora de entrada, la del aviso o los plazos, revisa los tres sitios a la vez. Las acciones (cerrar el acceso, cambiar la contraseña) las hace el informático, nunca yo (regla 12).
+- **Las horas deben cuadrar** con la columna "Con Bastión" de `#historia`: entrada el viernes a las 21:47 y aviso el sábado a las 08:40 (la historia dice "antes de las 10:00"). Si cambias la hora de entrada o la del aviso, revisa los dos sitios a la vez. Son las únicas referencias horarias permitidas en la web (regla 17). Las acciones (cerrar el acceso, cambiar la contraseña) las hace el informático, nunca yo (regla 12).
 - Tokens añadidos al `:root` para esta tarjeta: `--coral-light`, `--coral-glow`, `--coral-line`, `--line-dark`, `--shadow-xl`. Reutiliza `--navy-light`, `--sky` y `--text-light`, que ya existían.
 - Responsive: ≤960px la tarjeta pasa debajo de los botones (`.aviso-wrap { max-width: 420px }`); ≤640px, `.aviso-card` con menos relleno y `.aviso-title` a 1.3rem. Misma animación de entrada que tenía la tarjeta anterior (`fadeUp`, en `.aviso-wrap`).
 
@@ -287,7 +287,7 @@ Reglas:
 - Todos los precios se publican sin IVA, siempre con "+ IVA" visible. En `#chequeo` y `#vigilancia`, mismo orden: título → frase corta → bloque `.price-block` unificado → tarjetas → resto. Los precios de lanzamiento o descuentos puntuales pactados en llamadas no se publican.
 - **Sin permanencia** en la web. El preaviso para darse de baja va solo en el contrato y no se publica.
 - **Albacete solo aparece en el pie de página (`.local-section` y `<footer>`), en el aviso legal (`/legal`) y en la dirección postal del JSON-LD.** No va en la portada, ni en titulares, ni en `title`, `description`, Open Graph, Twitter ni `keywords`. En "Quién soy" va la frase "Trabajo en remoto con empresas de toda España."
-- Plazos de aviso de alertas críticas: menos de 1 hora de lunes a viernes de 9:00 a 18:00; fuera de ese horario, antes de las 10:00 del día siguiente, fines de semana y festivos incluidos.
+- Los plazos de aviso de alertas críticas no se publican en la web: van en el contrato y en la llamada.
 - Número limitado de clientes (el número no se publica).
 - Correo: contesto el mismo día laborable.
 - Calendario para la llamada de 10 minutos: https://cal.com/mariobastion/10min
@@ -342,6 +342,13 @@ Tras cada paso: validado contra `http://127.0.0.1:4321` (el build formal sigue b
 4. ✅ Metadatos: `title`, `description` (y con ella Open Graph y Twitter), `keywords` y JSON-LD adaptados a precio y ubicación nuevos. No había campos de precio en el JSON-LD y no se han añadido.
 5. ✅ Ubicación: quitado "Albacete" del badge del hero, del `title`, de la `description`, de `keywords` y de `areaServed`; "Quién soy" añade *"Trabajo en remoto con empresas de toda España."* (regla 16).
 6. ✅ Búsqueda final sin restos de los precios, límites ni plazos de preaviso anteriores en `index.astro`, `legal.astro` ni `public/`.
+
+### Ronda 6 — hecha (22/10/2026): fuera los plazos de aviso de la web
+
+1. ✅ `#vigilancia`: eliminado el párrafo de plazos (`.plazos-aviso`, HTML y CSS). La sección termina en las tres tarjetas.
+2. ✅ FAQ 5: quitado "antes de las 10:00"; el resto de la respuesta no cambia.
+3. ✅ Metadatos y JSON-LD: revisados, no contenían plazos. `#historia` y la tarjeta "Ejemplo de aviso" del hero no se tocan (regla 17).
+4. Se mantiene "te aviso en los plazos acordados" (`.porque-objecion` y FAQ 4): no da ningún plazo concreto y remite al contrato.
 
 ### Auditoría (28/09/2026): cambios de Mario en VS Code sin comunicar
 
