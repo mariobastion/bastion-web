@@ -29,7 +29,7 @@ Contexto para trabajar en la landing de bastiondefensa.com (proyecto Astro). Lé
 
 ### Oferta en escalera
 
-1. **Chequeo de 14 días** — producto de entrada, de pago, **900 € + IVA**, hasta 2 servidores y 10 puestos de trabajo (con más equipos, presupuesto cerrado tras la primera llamada). **Es la conversión principal de la web.** Se pide reservando en **https://cal.com/mariobastion/30min**; el correo (info@bastiondefensa.com) queda como alternativa para quien prefiera escribir. Incluye:
+1. **Chequeo de 14 días** — producto de entrada, de pago, **390 € + IVA**, **gratis si contrata la vigilancia en los 30 días siguientes**. **Es la conversión principal de la web.** Se pide reservando en **https://cal.com/mariobastion/30min**; el correo (info@bastiondefensa.com) queda como alternativa para quien prefiera escribir. Incluye:
    - La instalación de la sonda, que hace **el informático del cliente guiado por mí**. La sonda solo observa: no cambia nada ni afecta a la operativa. (Si el cliente no tiene informático, la instalo yo con su autorización por escrito; es la única excepción a "no toco nada".)
    - 14 días de vigilancia.
    - Un informe en lenguaje llano: resumen de una página con los números clave y un semáforo, los riesgos ordenados por importancia para el negocio y un plan de acción que dice qué hay que arreglar, en qué orden y por qué. Lo ejecuta el informático del cliente.
@@ -37,8 +37,8 @@ Contexto para trabajar en la landing de bastiondefensa.com (proyecto Astro). Lé
    - Una llamada de 30 minutos con su informático para pasarle la parte técnica.
    - 30 días después del informe comprobando, con la sonda todavía instalada, que las correcciones han quedado bien.
    - **Descuento:** si contrata la vigilancia en los 30 días siguientes a la entrega del informe, le descuento el chequeo entero, repartido en las tres primeras cuotas.
-2. **Vigilancia continua mensual** — **desde 390 €/mes + IVA, con hasta 2 servidores y 10 puestos de trabajo.** Con más equipos, precio cerrado tras el chequeo. Incluye detección todos los días del año (fines de semana y festivos también), aviso al cliente y a su informático con qué hacer, revisión de la configuración de sus equipos e informe mensual con una sola cifra ("nivel de exposición") y su tendencia.
-   - **Sin permanencia:** pago mes a mes y baja avisando con 30 días.
+2. **Vigilancia continua mensual** — **190 €/mes + IVA, hasta 20 equipos, servidores incluidos** (sin "desde"). Incluye detección todos los días del año (fines de semana y festivos también), aviso al cliente y a su informático con qué hacer, revisión de la configuración de sus equipos e informe mensual con una sola cifra ("nivel de exposición") y su tendencia.
+   - **Sin permanencia:** pago mes a mes. En la web solo se dice "Sin permanencia"; el plazo de preaviso para darse de baja va en el contrato, **no se publica**.
    - **Tiempos de aviso de alertas críticas.** Texto que va en la web (sencillo, sin "del día siguiente" por ambiguo): *"Si salta algo grave en horario de oficina, te aviso en menos de 1 hora. Si pasa de noche, en fin de semana o en festivo, como tarde a las 10:00 de la mañana."* La definición exacta (horario de oficina de lunes a viernes de 9:00 a 18:00; fuera de él, como tarde a las 10:00 de la mañana siguiente, fines de semana y festivos incluidos) va en el contrato, no en la web.
    - **Número limitado de clientes**, para poder atenderlos a todos yo mismo. El número exacto no se publica.
 3. **No hay servicio de corrección ni de respuesta a incidentes.** Bastión nunca toca los sistemas del cliente (la única excepción es instalar la sonda si no hay informático). No arreglo nada: digo qué hay que arreglar, en qué orden y por qué, y lo ejecuta el informático del cliente. Tampoco hago respuesta a incidentes ni análisis forense: si detecto un ataque en marcha, aviso al gerente y a su informático con los primeros pasos y les digo a quién acudir. La respuesta automática no se ofrece ni se menciona en la web.
@@ -68,6 +68,7 @@ Contexto para trabajar en la landing de bastiondefensa.com (proyecto Astro). Lé
 13. **Nunca publicar** el precio por equipo adicional ni el número máximo de clientes.
 14. **Todos los precios se publican sin IVA y siempre con "+ IVA" visible.** En `#chequeo` y `#vigilancia`, mismo orden: título → frase corta → bloque de precio unificado (`.price-block`) → tarjetas → resto.
 15. **Los precios de lanzamiento o descuentos puntuales que pacte en llamadas nunca se publican en la web.**
+16. **Ubicación: Albacete solo aparece en el pie de página (`.local-section` y `<footer>`), en el aviso legal y en la dirección postal del JSON-LD.** Nunca en el hero, titulares, títulos de sección, `title`, `description`, Open Graph, Twitter ni `keywords`. La web se vende para toda España y en remoto.
 
 ---
 
@@ -96,7 +97,7 @@ La lógica: arriba, la salida rápida para quien ya está convencido (hero + ofe
 
 | # | id | Título visible | Estado |
 |---|----|----------------|--------|
-| 1 | `inicio` | Hero: "Tu empresa cierra los viernes. Los ciberataques, no." Badge: "Ciberseguridad para PYMEs · desde Albacete". Subtítulo: "Yo vigilo. Tu informático arregla. Tú duermes tranquilo." Nota: "Descubre qué está pasando en tu red." Columna derecha: tarjeta "Ejemplo de aviso" con formato de correo (ver 6.8; ya no hay vista previa del informe). | Hecho. No cambiar el titular. Botón principal → cal.com/30min, botón secundario → cal.com/10min, ambos en pestaña nueva. La ubicación (Albacete) solo va en el badge, `.local-section` y metadatos — no la dupliques en otros sitios |
+| 1 | `inicio` | Hero: "Tu empresa cierra los viernes. Los ciberataques, no." Badge: "Ciberseguridad para PYMEs". Subtítulo: "Yo vigilo. Tu informático arregla. Tú duermes tranquilo." Nota: "Descubre qué está pasando en tu red." Columna derecha: tarjeta "Ejemplo de aviso" con formato de correo (ver 6.8; ya no hay vista previa del informe). | Hecho. No cambiar el titular. Botón principal → cal.com/30min, botón secundario → cal.com/10min, ambos en pestaña nueva. **Albacete no aparece en la portada ni en titulares ni en metadatos** (ver regla 16) |
 | 2 | `chequeo` | "Qué es el chequeo de 14 días" (etiqueta "Servicio inicial") | Hecho, con "Además, incluye:" (3 puntos) y descuento |
 | 3 | `historia` | "Viernes 18:00. Nadie está mirando." (etiqueta "El punto ciego") | Hecho, columna "Con Bastión" definitiva |
 | 4 | `vigilancia` | "Y a partir de ahí, vigilancia todos los días del año" | Hecho, con precio y plazos |
@@ -117,7 +118,7 @@ La lógica: arriba, la salida rápida para quien ya está convencido (hero + ofe
 
 - Orden fijo (igual en `#chequeo` y `#vigilancia`): título → frase corta (`.section-desc`) → bloque de precio (`.price-block`) → tarjetas → resto. **Ya no hay `h3` intermedio "Explicado en 3 pasos"**: las tarjetas van directas después del bloque de precio.
 - `.section-desc`: *"Analizo tu empresa durante dos semanas y te cuento los principales puntos débiles y cómo arreglarlos."* ("te cuento", no "te comunico").
-- **Precio** (bloque `.price-block`, justo después de la frase corta y antes de las tarjetas): *"900 € + IVA"*, y debajo: *"Hasta 2 servidores y 10 puestos de trabajo. Con más equipos, presupuesto cerrado tras la primera llamada."*
+- **Precio** (bloque `.price-block`, justo después de la frase corta y antes de las tarjetas): *"390 € + IVA"*, y debajo: *"Gratis si contratas la vigilancia en los 30 días siguientes."* (la palabra "vigilancia" es un enlace interno a `#vigilancia`, en blanco y subrayado para que se vea sobre el fondo azul marino: `.price-includes a`). Es el **único sitio de `#chequeo` donde se habla del descuento**: no repetirlo en otra línea de la sección.
   - **Diseño del bloque** (se distingue de las tarjetas a propósito): caja con fondo `var(--navy)`, bordes redondeados (`var(--radius)`), sin sombra y sin hover — no debe parecer clicable. Ancho igual al de la frase corta de arriba (`max-width: 560px`, no se extiende a todo el contenedor). Siempre en columna, en escritorio y en móvil: arriba la cifra grande en blanco con "+ IVA" pequeño al lado (`.price-vat`); debajo el texto de qué incluye, en blanco con opacidad reducida y tamaño pequeño (`.price-right` / `.price-includes`).
 - Paso 01, texto (retocado por Mario en VS Code, más corto que la versión original): *"Tu informático instala una sonda, guiado por mí. No afecta a vuestra forma de trabajar."* La etiqueta no cambia.
 - Paso 02, etiqueta (svc-tag): *"Solo observo, no toco nada"* (antes "Detección de amenazas" — quitado por sonar más a jerga de auditoría/incidentes que a la propuesta de valor real).
@@ -125,7 +126,7 @@ La lógica: arriba, la salida rápida para quien ya está convencido (hero + ofe
   - Una reunión de 45 minutos para explicarte el informe.
   - Una llamada con tu informático para pasarle la parte técnica.
   - 30 días comprobando que las correcciones quedan bien.
-- Línea destacada debajo (`.incluye-descuento`): *"Si contratas el servicio mensual en los 30 días siguientes, el chequeo te sale gratis."* Las palabras "servicio mensual" son un enlace interno a `#vigilancia` (subrayado, misma pestaña). Ya no menciona "las tres primeras cuotas": ese detalle va en la FAQ 2 y en la sección 2.
+- Ya **no hay línea destacada de descuento** debajo de "Además, incluye:" (se eliminó `.incluye-descuento`, HTML y CSS, para no repetir lo que dice el bloque de precio).
 
 ### 6.1 Historia — línea de tiempo comparada (`#historia`)
 
@@ -152,7 +153,7 @@ Descripción: *"A las 18:00 se va el último. A las 21:47 entra alguien. Esto es
 - Etiqueta: "Servicio mensual". Título: "Y a partir de ahí, vigilancia todos los días del año".
 - Orden fijo, igual que en `#chequeo`: título → frase corta (`.section-desc`) → bloque de precio (`.price-block`) → tarjetas → resto.
 - `.section-desc`: *"La sonda se queda y sigo vigilando tu red todos los días del año."*
-- **Precio** (mismo bloque `.price-block` que en `#chequeo`, justo después de la frase corta y antes de las tarjetas): *"Desde 390 €/mes + IVA"*, y debajo: *"Hasta 2 servidores y 10 puestos de trabajo. Con más equipos, precio cerrado tras el chequeo."* y *"Sin permanencia: te das de baja avisando con 30 días."*
+- **Precio** (mismo bloque `.price-block` que en `#chequeo`, justo después de la frase corta y antes de las tarjetas): *"190 €/mes + IVA"* (sin "desde"), y debajo, en dos líneas: *"Hasta 20 equipos, servidores incluidos."* y *"Sin permanencia."*
 - Tres tarjetas (`.svc-grid` / `.svc-card`), después del precio:
   - **Vigilancia continua.** La sonda sigue vigilando tu servidor y tus equipos todos los días, incluidos fines de semana y festivos. Etiqueta: "Todos los días del año".
   - **Aviso claro.** Si pasa algo, te aviso a ti y a tu informático con lo que hay que hacer, en tu idioma. No toco tus sistemas: la decisión es vuestra. Etiqueta: "Tú decides".
@@ -178,7 +179,7 @@ Descripción: *"A las 18:00 se va el último. A las 21:47 entra alguien. Esto es
 
 ### 6.4 Quién soy (`#mario`) — hecho
 
-Todo lo siguiente es **definitivo**. Etiqueta (section-label): "Quién soy". Título: "Trato directo." Cargo: "Mario — Fundador & Ingeniero de ciberseguridad". Párrafo único: *"Soy quien vigila tu red y te avisa si algo no va bien."* **Sin píldoras** (se eliminaron "Sin comerciales" y "Hablas siempre conmigo", y su CSS `.pills` / `.pill` / `.pill-dot`, que no se usaba en ninguna otra sección). LinkedIn al final, con `rel="noopener noreferrer"`.
+Todo lo siguiente es **definitivo**. Etiqueta (section-label): "Quién soy". Título: "Trato directo." Cargo: "Mario — Fundador & Ingeniero de ciberseguridad". Párrafo único: *"Soy quien vigila tu red y te avisa si algo no va bien. Trabajo en remoto con empresas de toda España."* **Sin píldoras** (se eliminaron "Sin comerciales" y "Hablas siempre conmigo", y su CSS `.pills` / `.pill` / `.pill-dot`, que no se usaba en ninguna otra sección). LinkedIn al final, con `rel="noopener noreferrer"`.
 
 Los "7 años de experiencia en grandes empresas" ya no aparecen en esta sección; el dato sigue decidido en la sección 8 por si se reutiliza en otro sitio.
 
@@ -192,7 +193,7 @@ Con `<details>` y `<summary>`, sin JavaScript. Las preguntas van con las palabra
 
 Solo 7 preguntas visibles (reorganizado; antes había 12 publicadas):
 
-1. **¿Cuánto cuesta?** El Chequeo de 14 días cuesta 900 € + IVA, con hasta 2 servidores y 10 puestos de trabajo. La vigilancia mensual, desde 390 €/mes + IVA con el mismo tamaño. Sin coste de licencias. Y si contratas la vigilancia en los 30 días siguientes al chequeo, el chequeo te sale gratis.
+1. **¿Cuánto cuesta?** El Chequeo de 14 días cuesta 390 € + IVA. La vigilancia mensual, 190 €/mes + IVA, con hasta 20 equipos, servidores incluidos. Sin coste de licencias. Y si contratas la vigilancia en los 30 días siguientes al chequeo, el chequeo te sale gratis.
 2. **¿Puedo contratar directamente el servicio mensual?** Sí, pero siempre empezamos por el chequeo: son los primeros 14 días del servicio. Si continúas, te lo descuento entero de las tres primeras cuotas, así que te cuesta lo mismo. La diferencia es que, si no te convence, te quedas con tu informe y no pagas nada más.
 3. **¿Esto no lo hace ya mi antivirus o mi informático?** El antivirus intenta impedir que entre algo conocido; yo vigilo lo que pasa dentro por si algo se cuela, y aviso. Tu informático sigue siendo tu informático: le doy visibilidad que hoy no tiene.
    - *[Comentada con TODO tras esta pregunta: "¿Y si no tengo informático?", pendiente de que Mario tenga su lista de profesionales de confianza.]*
@@ -200,7 +201,7 @@ Solo 7 preguntas visibles (reorganizado; antes había 12 publicadas):
 5. **¿Tocas mis sistemas o arreglas tú lo que encuentras?** No. Te digo qué hay que arreglar, en qué orden y por qué, se lo explico a tu informático para que lo haga él y después compruebo que ha quedado bien. Si detecto algo un sábado de madrugada, os aviso a ti y a tu informático antes de las 10:00, y la decisión es vuestra.
    - *[Comentadas con TODO tras esta pregunta: "¿Y si detectas un ataque en marcha?" (pendiente del especialista en respuesta a incidentes) y "¿Ves mis datos, mis correos, mis nóminas?" (pendiente del contrato RGPD y de confirmar dónde está el servidor).]*
 6. **¿Y si nunca pasa nada? ¿Pago por nada?** Cada mes recibes un informe con lo que se ha intentado, lo que se ha revisado y lo que conviene corregir. Que no pase nada también es el resultado.
-7. **¿Tengo permanencia? ¿Qué pasa si lo dejo?** No hay permanencia: pagas mes a mes y puedes dejarlo avisando con 30 días. Te entrego todos tus informes y, si los quieres, tus alertas en un formato abierto. Después borro tus datos y te envío un certificado de borrado.
+7. **¿Tengo permanencia? ¿Qué pasa si lo dejo?** No hay permanencia: pagas mes a mes. Te entrego todos tus informes y, si los quieres, tus alertas en un formato abierto. Después borro tus datos y te envío un certificado de borrado.
 
 **Eliminadas** (ya no se publican, ni sueltas ni fusionadas salvo donde se indica): "¿Qué recibo exactamente con el chequeo?", "¿Tengo que parar la empresa para instalarlo?", "Si usas herramientas de código abierto, ¿qué te estoy pagando?". Las preguntas "¿me apagas el servidor?" y "¿Arreglas tú lo que encuentras?" se fusionaron en la 5; "¿Tengo que firmar permanencia?" y "¿Qué pasa con mis datos si lo dejo?" se fusionaron en la 7.
 
@@ -219,7 +220,9 @@ Solo 7 preguntas visibles (reorganizado; antes había 12 publicadas):
 Title, description, og, twitter y JSON-LD reescritos en la ronda 1. Si añades el precio o el calendario en algún metadato, respeta la regla 13.
 
 - `serviceType` del JSON-LD: `["Vigilancia de Ciberseguridad para PYMEs", "Chequeo de Seguridad Informática"]` (quitados "Auditoría de Seguridad" y "Respuesta ante Incidentes" — regla 12).
-- `keywords`: quitados "respuesta incidentes ciberseguridad" y "auditoría seguridad informática", por el mismo motivo.
+- `keywords`: quitados "respuesta incidentes ciberseguridad" y "auditoría seguridad informática" (regla 12) y "ciberseguridad Albacete" (regla 16).
+- `title`: *"Bastión Defensa | Vigilancia de ciberseguridad para PYMEs en España"*. `description` (y por tanto Open Graph y Twitter, que la reutilizan): *"Vigilo tu servidor y tus equipos, también los fines de semana. Chequeo de 14 días por 390 € + IVA. Trato directo con el ingeniero, sin comerciales."* Si cambia el precio del chequeo, cámbialo también aquí.
+- JSON-LD: `description` termina en "En toda España."; `areaServed` solo `España`; sin campos de precio (`offers`/`price`), no se añaden. Se mantiene `address.addressLocality: Albacete` porque es la dirección postal de la empresa, igual que en el aviso legal.
 
 ### 6.8 Tarjeta del hero — hecho
 
@@ -227,7 +230,7 @@ Columna derecha de `.hero-inner`: un **ejemplo de aviso con aspecto de correo** 
 
 Textos exactos (no cambiar sin avisarme):
 - Etiqueta (`.aviso-caption`): **"Ejemplo de aviso"**. `aria-label` de la tarjeta: "Ejemplo de aviso de una alerta crítica".
-- Remitente: avatar "M"; **"Mario · Bastión"**; **"Para ti y tu informático"**; hora **"Sáb 08:40"**.
+- Remitente: avatar "M"; **"Mario de Bastión"**; **"Para ti y tu informático"**; hora **"Sáb 08:40"**.
 - Insignia: **"Alerta crítica"** (con punto pulsante; sin animación si `prefers-reduced-motion`).
 - Titular (un `<p>`, no un encabezado): **"Anoche, a las 21:47, alguien entró en tu servidor"** (la hora en `<time>`).
 - Cuerpo: **"Qué tiene que hacer tu informático:"** y lista numerada: **1. Cerrar ese acceso remoto. 2. Cambiar la contraseña de la cuenta que usaron.**
@@ -269,19 +272,21 @@ Reglas:
 - [ ] Lista de informáticos de confianza para clientes que no tienen uno. (Desbloquea la pregunta 8.)
 - [ ] Contrato de encargado del tratamiento (RGPD) y confirmación de que el servidor de Hetzner está en la UE. (Desbloquea la pregunta 9.)
 - [ ] Alertas críticas enviadas automáticamente también al informático del cliente (plan de respaldo). Hasta que esté montado, no se promete en la web. (Desbloquea las frases de respaldo de 6.3 y de la pregunta 2.)
+- [ ] Qué se ofrece con más de 20 equipos: la web ya no dice nada al respecto. Decidir qué se responde en llamada.
 - [ ] Revisar la imagen `og-bastion.png` (la que se ve al compartir la web): que no tenga mensajes antiguos (SecOps, auditoría, respuesta a incidentes).
 
 ### Decidido
 
 - Datos reales para "Quién soy": casi 7 años en ciberseguridad en grandes empresas. No se nombran las empresas ni se publican certificaciones.
 - Hero genérico, sin nicho de sector (el nicho va en las llamadas).
-- Producto de entrada: "Chequeo de 14 días", 900 € + IVA, hasta 2 servidores y 10 puestos, en 3 pasos. Contenido completo en la sección 2.
+- Producto de entrada: "Chequeo de 14 días", **390 € + IVA**, **gratis si contrata la vigilancia en los 30 días siguientes**. Contenido completo en la sección 2.
 - La sonda la instala el informático del cliente guiado por mí (si no hay informático, yo con autorización por escrito).
-- Descuento del chequeo en las tres primeras cuotas si contrata la vigilancia en los 30 días siguientes al informe (el chequeo le sale gratis).
+- El chequeo sale gratis si contrata la vigilancia en los 30 días siguientes al informe (se descuenta entero, repartido en las tres primeras cuotas).
 - La vigilancia siempre empieza por el chequeo; no hay alta directa sin chequeo.
-- Vigilancia: desde 390 €/mes + IVA con hasta 2 servidores y 10 puestos; con más equipos, precio cerrado tras el chequeo. La tarifa por equipo adicional es interna y no se publica.
+- Vigilancia: **190 €/mes + IVA**, **hasta 20 equipos, servidores incluidos**, sin "desde". La web ya no dice nada de qué pasa con más de 20 equipos.
 - Todos los precios se publican sin IVA, siempre con "+ IVA" visible. En `#chequeo` y `#vigilancia`, mismo orden: título → frase corta → bloque `.price-block` unificado → tarjetas → resto. Los precios de lanzamiento o descuentos puntuales pactados en llamadas no se publican.
-- Sin permanencia, 30 días de preaviso.
+- **Sin permanencia** en la web. El preaviso para darse de baja va solo en el contrato y no se publica.
+- **Albacete solo aparece en el pie de página (`.local-section` y `<footer>`), en el aviso legal (`/legal`) y en la dirección postal del JSON-LD.** No va en la portada, ni en titulares, ni en `title`, `description`, Open Graph, Twitter ni `keywords`. En "Quién soy" va la frase "Trabajo en remoto con empresas de toda España."
 - Plazos de aviso de alertas críticas: menos de 1 hora de lunes a viernes de 9:00 a 18:00; fuera de ese horario, antes de las 10:00 del día siguiente, fines de semana y festivos incluidos.
 - Número limitado de clientes (el número no se publica).
 - Correo: contesto el mismo día laborable.
@@ -306,7 +311,7 @@ Reglas:
 1. ✅ Frase falsa "el sistema sigue siendo tuyo" — solo aparecía una vez, en la intro de `#por-que`. Sustituida por el texto correcto de la sección 2. Confirmado por grep en todo el archivo que no queda ninguna variante.
 2. ✅ `#chequeo`: paso 01 reescrito ("tu informático instala la sonda, guiado por mí"), nuevo bloque "Qué incluye" (6 puntos con marca de verificación) y línea destacada del descuento.
 3. ✅ `#historia`: columna "Con Bastión" con el texto definitivo — "me salta la alerta" y "Sábado, antes de las 10:00".
-4. ✅ `#vigilancia`: bloque de precio destacado ("Desde 290 €/mes" + condiciones) y línea de plazos de aviso de alertas críticas.
+4. ✅ `#vigilancia`: bloque de precio destacado y línea de plazos de aviso de alertas críticas.
 5. ✅ `#por-que`: tabla ampliada a 5 filas (con quién hablas, permanencia, si te vas, qué pagas, aviso de alerta crítica) y bloque "¿Y si solo eres tú?" con el texto definitivo (número limitado de empresas).
 6. ✅ `#preguntas`: 1, 2, 4, 5, 7, 10, 14 actualizadas; 11 y 13 con respuesta nueva (ya no dependen de datos); 12 añadida ("¿Qué pasa con mis datos si lo dejo?"). Las preguntas 6, 8 y 9 siguen comentadas con TODO, tal como pedía la tarea.
 7. ✅ `#contacto` y hero: botón "Prefiero una llamada de 10 minutos" y el secundario del hero apuntan a `https://cal.com/mariobastion/10min` (con `target="_blank" rel="noopener noreferrer"`). Añadido "Sin permanencia." al texto del CTA y "Te contesto el mismo día laborable." debajo de los botones.
@@ -316,10 +321,10 @@ Tras cada paso: validado contra `http://127.0.0.1:4321` (el build formal sigue b
 
 ### Ronda 3 — hecha (28/09/2026): nuevos precios
 
-1. ✅ Chequeo: 500 € → **900 € + IVA**. Vigilancia: 290 €/mes → **390 €/mes + IVA**. Actualizado en `#chequeo`, `#vigilancia`, la FAQ 1 y la meta description (único sitio de metadatos que mencionaba precio).
+1. ✅ Primera actualización de precios y condiciones en `#chequeo`, `#vigilancia`, la FAQ 1 y la meta description (los precios vigentes están en la sección 2 y en "Decidido"; los anteriores se han borrado de este archivo).
 2. ✅ Creado el bloque de precio unificado `.price-block` (cifra grande en mono + "+ IVA" pequeño + línea de qué incluye), usado igual en `#chequeo` y `#vigilancia`. Orden final (rectificado el 28/09/2026): título → frase corta (`.section-desc`) → bloque de precio → tarjetas → resto. En `#vigilancia` se añadió `.section-desc` nueva ("La sonda se queda y sigo vigilando tu red todos los días del año.") que antes no existía. Sustituye a los antiguos `.precio-chip` (chequeo) y `.precio-tag`/`.precio-detalle` (vigilancia), eliminados.
 3. ✅ Añadidas las reglas de copy 14 y 15 (precios siempre "+ IVA", precio lo primero con bloque unificado; descuentos puntuales de llamadas nunca se publican).
-4. ✅ Revisado que ningún "500" ni "290" quedara como precio suelto en el archivo (grep limpio; los únicos "500"/"290" restantes son valores de CSS sin relación, como `font-weight: 500`).
+4. ✅ Revisado que ninguna cifra de precio antigua quedara suelta (grep limpio).
 5. ⏳ No pude confirmar visualmente el responsive a 375px (sigue sin haber navegador headless en esta máquina); revisado por diseño: el bloque no usa `flex` ni `white-space: nowrap`, así que el texto envuelve con normalidad y no puede desbordar horizontalmente.
 
 ### Ronda 4 — hecha (28/09/2026): rediseño de `.price-block`
@@ -328,6 +333,15 @@ Tras cada paso: validado contra `http://127.0.0.1:4321` (el build formal sigue b
 2. ✅ El fondo blanco con borde del diseño anterior queda descartado — ya no se parece a las tarjetas `.svc-card`, que era justo el objetivo.
 3. ✅ **Rectificado el mismo día:** la caja ya no se extiende a todo el ancho del contenedor — `max-width: 560px`, igual que la frase corta de arriba, para que quede alineada con ella.
 4. ✅ **Rectificado otra vez:** el layout ya no es en dos columnas en escritorio (se veía apretado en `#vigilancia`, con dos líneas de texto en muy poco ancho). Ahora es columna siempre, en escritorio y en móvil: cifra arriba, texto de qué incluye debajo. Se quitó el `flex-direction: row` de escritorio y su media query de excepción para móvil, que ya no hace falta.
+
+### Ronda 5 — hecha (22/10/2026): nuevos precios y condiciones, y ubicación
+
+1. ✅ `#chequeo`: bloque de precio con **390 € + IVA** y *"Gratis si contratas la vigilancia en los 30 días siguientes."*; eliminada la línea de descuento duplicada (`.incluye-descuento`, HTML y CSS).
+2. ✅ `#vigilancia`: bloque de precio con **190 €/mes + IVA** (sin "desde"), *"Hasta 20 equipos, servidores incluidos."* y *"Sin permanencia."*
+3. ✅ FAQ 1 (¿Cuánto cuesta?) y FAQ 7 (permanencia) adaptadas; el preaviso de baja ya no se publica. La FAQ 2 no mencionaba precios ni límites y se dejó igual.
+4. ✅ Metadatos: `title`, `description` (y con ella Open Graph y Twitter), `keywords` y JSON-LD adaptados a precio y ubicación nuevos. No había campos de precio en el JSON-LD y no se han añadido.
+5. ✅ Ubicación: quitado "Albacete" del badge del hero, del `title`, de la `description`, de `keywords` y de `areaServed`; "Quién soy" añade *"Trabajo en remoto con empresas de toda España."* (regla 16).
+6. ✅ Búsqueda final sin restos de los precios, límites ni plazos de preaviso anteriores en `index.astro`, `legal.astro` ni `public/`.
 
 ### Auditoría (28/09/2026): cambios de Mario en VS Code sin comunicar
 

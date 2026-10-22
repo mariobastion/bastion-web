@@ -1,6 +1,6 @@
 ---
-const title = "Bastión Defensa | Vigilancia de ciberseguridad para PYMEs en Albacete y España";
-const description = "Vigilo tu servidor y tus equipos, también los fines de semana. Chequeo de 14 días por 900€ + IVA. Trato directo con el ingeniero, sin comerciales.";
+const title = "Bastión Defensa | Vigilancia de ciberseguridad para PYMEs en España";
+const description = "Vigilo tu servidor y tus equipos, también los fines de semana. Chequeo de 14 días por 390 € + IVA. Trato directo con el ingeniero, sin comerciales.";
 ---
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
   <meta name="description" content={description}/>
-  <meta name="keywords" content="ciberseguridad Albacete, seguridad informática España, vigilancia ciberseguridad PYME, chequeo de seguridad informática, continuidad operativa, Wazuh, bastión defensa"/>
+  <meta name="keywords" content="seguridad informática España, vigilancia ciberseguridad PYME, chequeo de seguridad informática, continuidad operativa, Wazuh, bastión defensa"/>
   <meta name="author" content="Bastión Defensa"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://www.bastiondefensa.com/"/>
@@ -34,7 +34,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Bastión Defensa",
-    "description": "Vigilancia de ciberseguridad para PYMEs, incluidos fines de semana y festivos. Chequeo de 14 días, vigilancia continua y trato directo con el ingeniero. Albacete y toda España.",
+    "description": "Vigilancia de ciberseguridad para PYMEs, incluidos fines de semana y festivos. Chequeo de 14 días, vigilancia continua y trato directo con el ingeniero. En toda España.",
     "url": "https://www.bastiondefensa.com",
     "address": {
       "@type": "PostalAddress",
@@ -43,7 +43,6 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       "addressCountry": "ES"
     },
     "areaServed": [
-      {"@type": "City", "name": "Albacete"},
       {"@type": "Country", "name": "España"}
     ],
     "serviceType": ["Vigilancia de Ciberseguridad para PYMEs", "Chequeo de Seguridad Informática"],
@@ -304,6 +303,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       margin: 0;
     }
     .price-includes + .price-includes { margin-top: .25rem; }
+    .price-includes a { color: var(--white); text-decoration: underline; text-underline-offset: 2px; }
     @media (max-width: 640px) {
       .price-block { padding: 1.3rem 1.5rem; }
       .price-figure { font-size: 1.6rem; }
@@ -314,7 +314,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     .chequeo .section-desc { margin-bottom: 1.5rem; }
     .incluye-block { margin-top: 3rem; max-width: 560px; }
     .incluye-title { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1rem; }
-    .incluye-list { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+    .incluye-list { list-style: none; padding: 0; margin-bottom: 0; }
     .incluye-list li {
       position: relative;
       padding-left: 1.6rem;
@@ -330,16 +330,6 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       color: var(--teal);
       font-weight: 700;
     }
-    .incluye-descuento {
-      font-family: var(--mono);
-      font-size: .85rem;
-      color: var(--teal);
-      background: var(--teal-bg);
-      border-left: 3px solid var(--teal);
-      padding: .8rem 1rem;
-      border-radius: 0 8px 8px 0;
-    }
-    .incluye-descuento a { text-decoration: underline; text-underline-offset: 2px; }
 
     /* SERVICIOS */
     .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
@@ -835,7 +825,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     <div class="hero-text">
       <div class="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Ciberseguridad para PYMEs · desde Albacete
+        Ciberseguridad para PYMEs
       </div>
       <h1><span>Tu empresa cierra los viernes.</span> Los ciberataques, no.</h1>
       <p class="hero-sub">Yo vigilo. Tu informático arregla. Tú duermes tranquilo.</p>
@@ -854,7 +844,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         <div class="aviso-head">
           <div class="aviso-avatar" aria-hidden="true">M</div>
           <div class="aviso-from">
-            <strong>Mario · Bastión</strong>
+            <strong>Mario de Bastión</strong>
             <span>Para ti y tu informático</span>
           </div>
           <span class="aviso-time">Sáb 08:40</span>
@@ -880,10 +870,10 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     <p class="section-desc fade-in">Analizo tu empresa durante dos semanas y te cuento los principales puntos débiles y cómo arreglarlos.</p>
     <div class="price-block fade-in">
       <div class="price-left">
-        <p class="price-figure">900 € <span class="price-vat">+ IVA</span></p>
+        <p class="price-figure">390 € <span class="price-vat">+ IVA</span></p>
       </div>
       <div class="price-right">
-        <p class="price-includes">Hasta 2 servidores y 10 puestos de trabajo. Con más equipos, presupuesto cerrado tras la primera llamada.</p>
+        <p class="price-includes">Gratis si contratas la <a href="#vigilancia">vigilancia</a> en los 30 días siguientes.</p>
       </div>
     </div>
     <div class="svc-grid">
@@ -923,7 +913,6 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         <li>Una llamada con tu informático para pasarle la parte técnica.</li>
         <li>30 días comprobando que las correcciones quedan bien.</li>
       </ul>
-      <p class="incluye-descuento">Si contratas el <a href="#vigilancia">servicio mensual</a> en los 30 días siguientes, el chequeo te sale gratis.</p>
     </div>
   </div>
 </section>
@@ -999,11 +988,11 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     <p class="section-desc fade-in">La sonda se queda y sigo vigilando tu red todos los días del año.</p>
     <div class="price-block fade-in">
       <div class="price-left">
-        <p class="price-figure">Desde 390 €/mes <span class="price-vat">+ IVA</span></p>
+        <p class="price-figure">190 €/mes <span class="price-vat">+ IVA</span></p>
       </div>
       <div class="price-right">
-        <p class="price-includes">Hasta 2 servidores y 10 puestos de trabajo. Con más equipos, precio cerrado tras el chequeo.</p>
-        <p class="price-includes">Sin permanencia: te das de baja avisando con 30 días.</p>
+        <p class="price-includes">Hasta 20 equipos, servidores incluidos.</p>
+        <p class="price-includes">Sin permanencia.</p>
       </div>
     </div>
     <div class="svc-grid">
@@ -1099,7 +1088,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
         <p class="section-label">Quién soy</p>
         <h2>Trato directo.</h2>
         <p class="mario-role">Mario — Fundador & Ingeniero de ciberseguridad</p>
-        <p>Soy quien vigila tu red y te avisa si algo no va bien.</p>
+        <p>Soy quien vigila tu red y te avisa si algo no va bien. Trabajo en remoto con empresas de toda España.</p>
         <a href="https://linkedin.com/in/mario-munoza" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 1.5rem; border-color: var(--teal-light); color: var(--teal-light);">
           Ver perfil profesional en LinkedIn
         </a>
@@ -1114,7 +1103,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
     <div class="faq-list fade-in">
       <details class="faq-item" name="faq">
         <summary>¿Cuánto cuesta?<span class="faq-icon"></span></summary>
-        <p>El Chequeo de 14 días cuesta 900 € + IVA, con hasta 2 servidores y 10 puestos de trabajo. La vigilancia mensual, desde 390 €/mes + IVA con el mismo tamaño. Sin coste de licencias. Y si contratas la vigilancia en los 30 días siguientes al chequeo, el chequeo te sale gratis.</p>
+        <p>El Chequeo de 14 días cuesta 390 € + IVA. La vigilancia mensual, 190 €/mes + IVA, con hasta 20 equipos, servidores incluidos. Sin coste de licencias. Y si contratas la vigilancia en los 30 días siguientes al chequeo, el chequeo te sale gratis.</p>
       </details>
       <details class="faq-item" name="faq">
         <summary>¿Puedo contratar directamente el servicio mensual?<span class="faq-icon"></span></summary>
@@ -1142,7 +1131,7 @@ const description = "Vigilo tu servidor y tus equipos, también los fines de sem
       </details>
       <details class="faq-item" name="faq">
         <summary>¿Tengo permanencia? ¿Qué pasa si lo dejo?<span class="faq-icon"></span></summary>
-        <p>No hay permanencia: pagas mes a mes y puedes dejarlo avisando con 30 días. Te entrego todos tus informes y, si los quieres, tus alertas en un formato abierto. Después borro tus datos y te envío un certificado de borrado.</p>
+        <p>No hay permanencia: pagas mes a mes. Te entrego todos tus informes y, si los quieres, tus alertas en un formato abierto. Después borro tus datos y te envío un certificado de borrado.</p>
       </details>
     </div>
   </div>
